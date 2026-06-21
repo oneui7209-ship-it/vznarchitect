@@ -1,0 +1,56 @@
+import { Home, Briefcase, MessageCircle, Layout, Phone } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+
+export function MobileDock() {
+  return (
+    <div className="fixed bottom-5 inset-x-5 z-[80] lg:hidden glass rounded-full py-2.5 px-5 flex items-center justify-between shadow-gold-lg border border-gold/25 bg-background/80 backdrop-blur-xl">
+      <Link
+        to="/"
+        className="flex flex-col items-center gap-1 text-muted-foreground hover:text-gold transition-colors"
+        activeProps={{ className: "text-gold!" }}
+        activeOptions={{ exact: true }}
+      >
+        <Home className="h-5.5 w-5.5" />
+        <span className="text-[8px] uppercase tracking-wider font-medium">Home</span>
+      </Link>
+
+      <Link
+        to="/projects"
+        className="flex flex-col items-center gap-1 text-muted-foreground hover:text-gold transition-colors"
+        activeProps={{ className: "text-gold!" }}
+      >
+        <Briefcase className="h-5.5 w-5.5" />
+        <span className="text-[8px] uppercase tracking-wider font-medium">Works</span>
+      </Link>
+
+      {/* WhatsApp highlighted button */}
+      <a
+        href="https://wa.me/918950078109?text=Hi%20VZN%20Architect%2C%20I%20would%20like%20a%20consultation."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative -top-5 flex flex-col items-center justify-center w-12.5 h-12.5 rounded-full bg-gold-gradient text-gold-foreground gold-glow hover:scale-105 transition-transform"
+        aria-label="WhatsApp Chat"
+      >
+        <MessageCircle className="h-6 w-6" />
+      </a>
+
+      <Link
+        to="/services"
+        className="flex flex-col items-center gap-1 text-muted-foreground hover:text-gold transition-colors"
+        activeProps={{ className: "text-gold!" }}
+      >
+        <Layout className="h-5.5 w-5.5" />
+        <span className="text-[8px] uppercase tracking-wider font-medium">Services</span>
+      </Link>
+
+      <Link
+        to="/contact"
+        className="flex flex-col items-center gap-1 text-muted-foreground hover:text-gold transition-colors"
+        activeProps={{ className: "text-gold!" }}
+      >
+        <Phone className="h-5.5 w-5.5" />
+        <span className="text-[8px] uppercase tracking-wider font-medium">Contact</span>
+      </Link>
+    </div>
+  );
+}
