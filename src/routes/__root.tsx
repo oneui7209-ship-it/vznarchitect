@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import logoUrl from "../assets/vzn-logo.png?url";
+import logoBlackBg from "../assets/vzn-logo-black-bg.png?url";
 import { reportAppError } from "../lib/error-logger";
 import { MobileDock } from "../components/MobileDock";
 
@@ -84,7 +85,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Luxury architecture & interior design studio." },
       { property: "og:site_name", content: "VZN Architect" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: logoBlackBg },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: logoBlackBg },
     ],
     links: [
       { rel: "icon", href: logoUrl, type: "image/png" },
