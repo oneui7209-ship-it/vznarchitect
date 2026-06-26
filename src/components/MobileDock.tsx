@@ -5,8 +5,8 @@ import { FaWhatsapp } from "react-icons/fa";
 export function MobileDock() {
   return (
     <>
-      <div className="fixed bottom-0 inset-x-2 h-[72px] bg-background z-[79] lg:hidden pointer-events-none rounded-t-full" />
-      <div className="fixed bottom-4 inset-x-2 z-[80] lg:hidden flex h-14 items-center justify-between rounded-full border border-gold/25 bg-background px-3 py-1.5 shadow-gold-lg">
+      <div className="fixed bottom-0 inset-x-1.5 h-[72px] bg-background z-[79] lg:hidden pointer-events-none rounded-t-full" />
+      <div className="fixed bottom-4 inset-x-1.5 z-[80] lg:hidden flex h-14 items-center justify-between rounded-full border border-gold/25 bg-background px-3 py-1.5 shadow-gold-lg">
       <Link
         to="/"
         className="flex min-h-[44px] flex-col items-center justify-center gap-0.5 text-muted-foreground hover:text-gold transition-colors"
