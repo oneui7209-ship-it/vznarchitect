@@ -4,10 +4,10 @@ import { FaWhatsapp } from "react-icons/fa";
 
 export function MobileDock() {
   return (
-    <div className="fixed bottom-5 inset-x-5 z-[80] lg:hidden glass rounded-full py-2.5 px-5 flex items-center justify-between shadow-gold-lg border border-gold/25 bg-background/80 backdrop-blur-xl">
+    <div className="fixed bottom-3 inset-x-3 z-[80] lg:hidden glass rounded-full px-4 py-2 flex items-center justify-between shadow-gold-lg border border-gold/25 bg-background/80 backdrop-blur-xl">
       <Link
         to="/"
-        className="flex flex-col items-center gap-1 text-muted-foreground hover:text-gold transition-colors"
+        className="flex min-h-[44px] flex-col items-center justify-center gap-0.5 text-muted-foreground hover:text-gold transition-colors"
         activeProps={{ className: "text-gold!" }}
         activeOptions={{ exact: true }}
       >
@@ -17,7 +17,7 @@ export function MobileDock() {
  
       <Link
         to="/projects"
-        className="flex flex-col items-center gap-1 text-muted-foreground hover:text-gold transition-colors"
+        className="flex min-h-[44px] flex-col items-center justify-center gap-0.5 text-muted-foreground hover:text-gold transition-colors"
         activeProps={{ className: "text-gold!" }}
       >
         <Briefcase className="h-5.5 w-5.5" />
@@ -37,7 +37,7 @@ export function MobileDock() {
 
       <Link
         to="/services"
-        className="flex flex-col items-center gap-1 text-muted-foreground hover:text-gold transition-colors"
+        className="flex min-h-[44px] flex-col items-center justify-center gap-0.5 text-muted-foreground hover:text-gold transition-colors"
         activeProps={{ className: "text-gold!" }}
       >
         <Layout className="h-5.5 w-5.5" />
@@ -46,7 +46,7 @@ export function MobileDock() {
 
       <Link
         to="/contact"
-        className="flex flex-col items-center gap-1 text-muted-foreground hover:text-gold transition-colors"
+        className="flex min-h-[44px] flex-col items-center justify-center gap-0.5 text-muted-foreground hover:text-gold transition-colors"
         activeProps={{ className: "text-gold!" }}
       >
         <Phone className="h-5.5 w-5.5" />

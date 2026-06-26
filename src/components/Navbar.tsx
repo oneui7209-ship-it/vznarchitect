@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Mail, Menu, X, Phone } from "lucide-react";
 import logo from "@/assets/vzn-logo.png";
 import { Link, useLocation } from "@tanstack/react-router";
 
@@ -39,6 +39,20 @@ export function Navbar() {
             : "bg-transparent py-3 lg:py-5"
         }`}
       >
+        <div className="mx-auto hidden max-w-7xl items-center justify-center gap-3 border-b border-gold/15 px-4 py-1.5 text-[10px] uppercase tracking-[0.24em] text-muted-foreground backdrop-blur-xl lg:hidden">
+          <a
+            href="mailto:hello@vznarchitect.com"
+            className="flex items-center gap-1.5 transition-colors hover:text-gold"
+          >
+            <Mail size={11} className="text-gold" />
+            hello@vznarchitect.com
+          </a>
+          <span className="h-1 w-1 rounded-full bg-gold/70" />
+          <a href="tel:+918950078109" className="transition-colors hover:text-gold">
+            +91 8950078109
+          </a>
+        </div>
+
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
           <Link
             to="/"
@@ -48,14 +62,13 @@ export function Navbar() {
             <img
               src={logo}
               alt="VZN Architect"
-              className="h-11 w-11 object-contain transition-transform duration-500 group-hover:rotate-12"
+              className="h-9 w-9 object-contain transition-transform duration-500 group-hover:rotate-12 sm:h-11 sm:w-11"
             />
-            {/* Show brand name on all viewports, scaling font sizes responsively */}
-            <div className="leading-none flex flex-col justify-center">
-              <div className="font-display text-lg sm:text-xl tracking-wide text-gold-gradient">
+            <div className="flex items-baseline gap-1.5 leading-none">
+              <div className="font-display text-[16px] tracking-[0.2em] text-gold sm:text-[18px]">
                 VZN
               </div>
-              <div className="text-[8px] sm:text-[9px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-muted-foreground mt-0.5 sm:mt-1">
+              <div className="text-[10px] uppercase tracking-[0.3em] text-white/90 sm:text-[11px]">
                 Architect
               </div>
             </div>
