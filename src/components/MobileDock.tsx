@@ -13,8 +13,8 @@ export function MobileDock() {
         activeProps={{ className: "text-gold!" }}
         activeOptions={{ exact: true }}
       >
-        <Home className="h-5.5 w-5.5" />
-        <span className="text-[8px] uppercase tracking-wider font-medium">Home</span>
+        <Home className="h-6 w-6" />
+        <span className="text-[9px] uppercase tracking-wider font-medium">Home</span>
       </Link>
  
       <Link
@@ -22,8 +22,8 @@ export function MobileDock() {
         className="flex min-h-[44px] flex-col items-center justify-center gap-0.5 text-muted-foreground hover:text-gold transition-colors"
         activeProps={{ className: "text-gold!" }}
       >
-        <Briefcase className="h-5.5 w-5.5" />
-        <span className="text-[8px] uppercase tracking-wider font-medium">Works</span>
+        <Briefcase className="h-6 w-6" />
+        <span className="text-[9px] uppercase tracking-wider font-medium">Works</span>
       </Link>
  
       {/* WhatsApp highlighted button */}
@@ -42,8 +42,8 @@ export function MobileDock() {
         className="flex min-h-[44px] flex-col items-center justify-center gap-0.5 text-muted-foreground hover:text-gold transition-colors"
         activeProps={{ className: "text-gold!" }}
       >
-        <Layout className="h-5.5 w-5.5" />
-        <span className="text-[8px] uppercase tracking-wider font-medium">Services</span>
+        <Layout className="h-6 w-6" />
+        <span className="text-[9px] uppercase tracking-wider font-medium">Services</span>
       </Link>
 
       <Link
@@ -51,8 +51,8 @@ export function MobileDock() {
         className="flex min-h-[44px] flex-col items-center justify-center gap-0.5 text-muted-foreground hover:text-gold transition-colors"
         activeProps={{ className: "text-gold!" }}
       >
-        <Phone className="h-5.5 w-5.5" />
-        <span className="text-[8px] uppercase tracking-wider font-medium">Contact</span>
+        <Phone className="h-6 w-6" />
+        <span className="text-[9px] uppercase tracking-wider font-medium">Contact</span>
       </Link>
     </div>
     </>

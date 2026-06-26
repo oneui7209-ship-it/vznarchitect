@@ -50,7 +50,7 @@ export function Navbar() {
       {/* Top info bar — hides on scroll */}
       <div
         ref={stripeRef}
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out ${
+        className={`fixed inset-x-0 top-0 z-[60] transition-all duration-500 ease-out ${
           scrolled
             ? "opacity-0 -translate-y-full pointer-events-none"
             : "opacity-100 translate-y-0"
