@@ -39,13 +39,13 @@ export function Navbar() {
             : "bg-transparent py-3 lg:py-5"
         }`}
       >
-        <div className="mx-auto hidden max-w-7xl items-center justify-center gap-3 border-b border-gold/15 px-4 py-1.5 text-[10px] uppercase tracking-[0.24em] text-muted-foreground backdrop-blur-xl lg:hidden">
+        <div className="mx-auto flex max-w-7xl items-center justify-center gap-2 border-b border-gold/15 bg-background/90 px-3 py-1.5 text-[9px] uppercase tracking-[0.22em] text-muted-foreground backdrop-blur-xl lg:hidden">
           <a
-            href="mailto:hello@vznarchitect.com"
+            href="mailto:veersingh11919@gmail.com"
             className="flex items-center gap-1.5 transition-colors hover:text-gold"
           >
-            <Mail size={11} className="text-gold" />
-            hello@vznarchitect.com
+            <Mail size={10} className="text-gold" />
+            veersingh11919@gmail.com
           </a>
           <span className="h-1 w-1 rounded-full bg-gold/70" />
           <a href="tel:+918950078109" className="transition-colors hover:text-gold">
