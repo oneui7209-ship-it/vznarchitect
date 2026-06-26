@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import logoUrl from "../assets/vzn-logo.png?url";
 import { reportAppError } from "../lib/error-logger";
 import { MobileDock } from "../components/MobileDock";
+import { ConsultationPopup } from "../components/ConsultationPopup";
 
 function NotFoundComponent() {
   return (
@@ -129,6 +130,7 @@ function RootComponent() {
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
       <MobileDock />
+      <ConsultationPopup />
     </QueryClientProvider>
   );
 }
