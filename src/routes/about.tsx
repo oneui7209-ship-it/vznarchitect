@@ -250,13 +250,15 @@ function AboutPage() {
             <p className="text-xs sm:text-sm text-muted-foreground max-w-lg mx-auto mb-8 leading-relaxed">
               Book a consultation in our Jhajjar studio or set up a phone review to kickstart your blueprints.
             </p>
-            <a
-              href="/#contact"
-              className="inline-flex items-center gap-3 bg-gold-gradient px-8 py-4 text-xs uppercase tracking-[0.2em] text-gold-foreground font-medium hover:gold-glow transition-all duration-500"
+            <button
+              onClick={() => {
+                window.dispatchEvent(new CustomEvent("open-consultation-popup"));
+              }}
+              className="inline-flex items-center gap-3 bg-gold-gradient px-8 py-4 text-xs uppercase tracking-[0.2em] text-gold-foreground font-medium hover:gold-glow transition-all duration-500 cursor-pointer"
             >
               Get Consultation
               <ArrowRight size={14} />
-            </a>
+            </button>
           </div>
         </section>
       </main>

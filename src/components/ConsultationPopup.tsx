@@ -16,6 +16,10 @@ export function ConsultationPopup() {
   });
 
   useEffect(() => {
+    // Only auto-open if the user hasn't already dismissed it in this browser
+    const isDismissed = localStorage.getItem("vzn_consultation_dismissed") === "true";
+    if (isDismissed) return;
+
     const timer = window.setTimeout(() => {
       setOpen(true);
     }, 3500);
@@ -23,8 +27,20 @@ export function ConsultationPopup() {
     return () => window.clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const handleOpenEvent = () => {
+      setOpen(true);
+    };
+
+    window.addEventListener("open-consultation-popup", handleOpenEvent);
+    return () => {
+      window.removeEventListener("open-consultation-popup", handleOpenEvent);
+    };
+  }, []);
+
   const handleClose = () => {
     setOpen(false);
+    localStorage.setItem("vzn_consultation_dismissed", "true");
     setTimeout(() => {
       setSubmitted(false);
       setFormData({ name: "", phone: "", email: "", service: "", message: "" });

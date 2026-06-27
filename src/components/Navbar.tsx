@@ -127,12 +127,14 @@ export function Navbar() {
             ))}
           </nav>
 
-          <Link
-            to="/contact"
-            className="hidden lg:inline-flex items-center gap-2 border border-gold/60 px-5 py-2.5 text-xs uppercase tracking-[0.2em] text-gold hover:bg-gold hover:text-gold-foreground transition-all duration-300 hover:gold-glow"
+          <button
+            onClick={() => {
+              window.dispatchEvent(new CustomEvent("open-consultation-popup"));
+            }}
+            className="hidden lg:inline-flex items-center gap-2 border border-gold/60 px-5 py-2.5 text-xs uppercase tracking-[0.2em] text-gold hover:bg-gold hover:text-gold-foreground transition-all duration-300 hover:gold-glow cursor-pointer"
           >
             Consultation
-          </Link>
+          </button>
 
           {/* Right actions container on mobile to fill blank space and balance UI */}
           <div className="flex lg:hidden items-center gap-2">
@@ -187,13 +189,15 @@ export function Navbar() {
               {l.label}
             </Link>
           ))}
-          <Link
-            to="/contact"
-            onClick={() => setOpen(false)}
-            className="mt-6 border border-gold px-8 py-3 text-xs uppercase tracking-[0.2em] text-gold hover:bg-gold hover:text-gold-foreground transition-all duration-300"
+          <button
+            onClick={() => {
+              setOpen(false);
+              window.dispatchEvent(new CustomEvent("open-consultation-popup"));
+            }}
+            className="mt-6 border border-gold px-8 py-3 text-xs uppercase tracking-[0.2em] text-gold hover:bg-gold hover:text-gold-foreground transition-all duration-300 cursor-pointer"
           >
             Get Consultation
-          </Link>
+          </button>
         </nav>
       </div>
     </>

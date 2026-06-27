@@ -253,13 +253,15 @@ function ServicesPage() {
             <p className="text-xs sm:text-sm text-muted-foreground max-w-lg mx-auto mb-8 leading-relaxed">
               Tell us your plot size, zoning details, and whether you need interiors or turnkey building works.
             </p>
-            <a
-              href="/#contact"
-              className="inline-flex items-center gap-3 bg-gold-gradient px-8 py-4 text-xs uppercase tracking-[0.2em] text-gold-foreground font-medium hover:gold-glow transition-all duration-500"
+            <button
+              onClick={() => {
+                window.dispatchEvent(new CustomEvent("open-consultation-popup"));
+              }}
+              className="inline-flex items-center gap-3 bg-gold-gradient px-8 py-4 text-xs uppercase tracking-[0.2em] text-gold-foreground font-medium hover:gold-glow transition-all duration-500 cursor-pointer"
             >
               Request Price Quote
               <ArrowRight size={14} />
-            </a>
+            </button>
           </div>
         </section>
       </main>

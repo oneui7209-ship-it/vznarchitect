@@ -174,13 +174,15 @@ function ProcessPage() {
             <p className="text-xs sm:text-sm text-muted-foreground max-w-lg mx-auto mb-8 leading-relaxed">
               We begin every project with a details consultation. Fill out our simple contact form or call us to reserve a review.
             </p>
-            <a
-              href="/#contact"
-              className="inline-flex items-center gap-3 bg-gold-gradient px-8 py-4 text-xs uppercase tracking-[0.2em] text-gold-foreground font-medium hover:gold-glow transition-all duration-500"
+            <button
+              onClick={() => {
+                window.dispatchEvent(new CustomEvent("open-consultation-popup"));
+              }}
+              className="inline-flex items-center gap-3 bg-gold-gradient px-8 py-4 text-xs uppercase tracking-[0.2em] text-gold-foreground font-medium hover:gold-glow transition-all duration-500 cursor-pointer"
             >
               Book Consultation
               <ArrowRight size={14} />
-            </a>
+            </button>
           </div>
         </section>
       </main>
