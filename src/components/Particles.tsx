@@ -10,7 +10,7 @@ export function Particles({ count = 30 }: { count?: number }) {
         delay: Math.random() * 20,
         duration: 15 + Math.random() * 25,
       })),
-    [count]
+    [count],
   );
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">

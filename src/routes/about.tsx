@@ -97,7 +97,8 @@ function AboutPage() {
                 About the <span className="italic text-gold-gradient">Studio</span>
               </h1>
               <p className="mt-6 text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-                Transforming spaces with precision, passion, and elite architectural execution. Driven by luxury standards and client satisfaction.
+                Transforming spaces with precision, passion, and elite architectural execution.
+                Driven by luxury standards and client satisfaction.
               </p>
             </motion.div>
           </div>
@@ -120,7 +121,7 @@ function AboutPage() {
                 {/* Accent frames */}
                 <div className="absolute -top-3 -left-3 w-16 h-16 border-t border-l border-gold/50" />
                 <div className="absolute -bottom-3 -right-3 w-16 h-16 border-b border-r border-gold/50" />
-                
+
                 {/* Overlay Badge */}
                 <div className="absolute -bottom-6 left-6 glass px-6 py-4 rounded-sm max-w-[240px]">
                   <div className="text-gold font-display text-3xl leading-none">4+</div>
@@ -144,13 +145,20 @@ function AboutPage() {
                 </h2>
                 <div className="space-y-6 text-muted-foreground text-sm sm:text-base leading-relaxed">
                   <p>
-                    VZN Architect was founded under the vision of Parveen (Veer) with a simple mandate: to make world-class architectural designs accessible to luxury-minded homeowners and businesses in Haryana and Delhi NCR.
+                    VZN Architect was founded under the vision of Parveen (Veer) with a simple
+                    mandate: to make world-class architectural designs accessible to luxury-minded
+                    homeowners and businesses in Haryana and Delhi NCR.
                   </p>
                   <p>
-                    With deep expertise in modern layouts, photorealistic 3D rendering, vastu layouts, and structural blueprints, Veer coordinates design processes seamlessly. We approach each space, no matter the size, as a unique canvas to blend aesthetic luxury and utility.
+                    With deep expertise in modern layouts, photorealistic 3D rendering, vastu
+                    layouts, and structural blueprints, Veer coordinates design processes
+                    seamlessly. We approach each space, no matter the size, as a unique canvas to
+                    blend aesthetic luxury and utility.
                   </p>
                   <p>
-                    Under his leadership, our Jhajjar studio has grown into a trusted destination for building plans, interior consulting, regulatory approvals (HSVP, HSIDC, DTP, CLU), and turnkey building execution.
+                    Under his leadership, our Jhajjar studio has grown into a trusted destination
+                    for building plans, interior consulting, regulatory approvals (HSVP, HSIDC, DTP,
+                    CLU), and turnkey building execution.
                   </p>
                 </div>
 
@@ -245,10 +253,12 @@ function AboutPage() {
         <section className="py-20 bg-background relative overflow-hidden border-t border-gold/15">
           <div className="relative mx-auto max-w-4xl px-5 sm:px-8 text-center">
             <h2 className="font-display font-light text-3xl sm:text-4xl mb-6">
-              Ready to construct your <span className="italic text-gold-gradient">dream</span> design?
+              Ready to construct your <span className="italic text-gold-gradient">dream</span>{" "}
+              design?
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground max-w-lg mx-auto mb-8 leading-relaxed">
-              Book a consultation in our Jhajjar studio or set up a phone review to kickstart your blueprints.
+              Book a consultation in our Jhajjar studio or set up a phone review to kickstart your
+              blueprints.
             </p>
             <button
               onClick={() => {

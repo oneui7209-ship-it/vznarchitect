@@ -47,7 +47,8 @@ export const Route = createFileRoute("/")({
           image: "/__l5e/vzn-logo.png",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Mahaveer Market, Near Cooperative Bank, Opp. Mini Sachivalaya, Dadri Toye",
+            streetAddress:
+              "Mahaveer Market, Near Cooperative Bank, Opp. Mini Sachivalaya, Dadri Toye",
             addressLocality: "Jhajjar",
             addressRegion: "HR",
             addressCountry: "IN",
@@ -65,7 +66,8 @@ function Index() {
     const hash = window.location.hash;
     if (hash) {
       const id = hash.substring(1);
-      const loaderActive = typeof window !== "undefined" && !sessionStorage.getItem("vzn_initial_loader_shown");
+      const loaderActive =
+        typeof window !== "undefined" && !sessionStorage.getItem("vzn_initial_loader_shown");
       const delay = loaderActive ? 2100 : 100;
 
       const timer = setTimeout(() => {

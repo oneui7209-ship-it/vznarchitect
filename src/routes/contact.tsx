@@ -54,7 +54,8 @@ function ContactPage() {
                 Connect with the <span className="italic text-gold-gradient">Studio</span>
               </h1>
               <p className="mt-6 text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-                Stop by our Jhajjar studio to review physical portfolios, materials, and layouts. Feel free to call or WhatsApp us for instant quotes.
+                Stop by our Jhajjar studio to review physical portfolios, materials, and layouts.
+                Feel free to call or WhatsApp us for instant quotes.
               </p>
             </motion.div>
           </div>
@@ -64,7 +65,6 @@ function ContactPage() {
         <section className="py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-5 sm:px-8">
             <div className="grid lg:grid-cols-12 gap-16 lg:gap-20 items-stretch">
-              
               {/* Left Column: Coordinates */}
               <div className="lg:col-span-7 flex flex-col justify-between space-y-8">
                 <div className="space-y-6">
@@ -72,13 +72,29 @@ function ContactPage() {
                     Studio <span className="italic text-gold-gradient">Coordinates</span>
                   </h2>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Our team provides end-to-end support for custom residential plots, layouts, vastu checks, and commercial permits. Use the links below to reach us directly.
+                    Our team provides end-to-end support for custom residential plots, layouts,
+                    vastu checks, and commercial permits. Use the links below to reach us directly.
                   </p>
 
                   <div className="space-y-4 pt-2">
-                    <InfoRow icon={Phone} label="Call Studio" value="+91 89500 78109" href="tel:8950078109" />
-                    <InfoRow icon={Mail} label="Email Address" value="veersingh11919@gmail.com" href="mailto:veersingh11919@gmail.com" />
-                    <InfoRow icon={Instagram} label="Follow Instagram" value="@vznarchitect" href="https://instagram.com/vznarchitect" />
+                    <InfoRow
+                      icon={Phone}
+                      label="Call Studio"
+                      value="+91 89500 78109"
+                      href="tel:8950078109"
+                    />
+                    <InfoRow
+                      icon={Mail}
+                      label="Email Address"
+                      value="veersingh11919@gmail.com"
+                      href="mailto:veersingh11919@gmail.com"
+                    />
+                    <InfoRow
+                      icon={Instagram}
+                      label="Follow Instagram"
+                      value="@vznarchitect"
+                      href="https://instagram.com/vznarchitect"
+                    />
                     <InfoRow
                       icon={MapPin}
                       label="Studio Location"
@@ -112,7 +128,7 @@ function ContactPage() {
                   {/* Gold corner accents */}
                   <div className="absolute -top-3 -left-3 w-10 h-10 border-t border-l border-gold/50" />
                   <div className="absolute -bottom-3 -right-3 w-10 h-10 border-b border-r border-gold/50" />
-                  
+
                   {/* Map Container */}
                   <div className="w-full h-full border border-gold/15 overflow-hidden shadow-2xl relative group bg-surface">
                     <iframe
@@ -127,7 +143,6 @@ function ContactPage() {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </section>
@@ -161,12 +176,8 @@ function InfoRow({
         <Icon size={16} strokeWidth={1.4} />
       </div>
       <div className="min-w-0">
-        <div className="text-[9px] uppercase tracking-[0.25em] text-gold mb-1">
-          {label}
-        </div>
-        <div className="text-xs text-foreground leading-relaxed break-words">
-          {value}
-        </div>
+        <div className="text-[9px] uppercase tracking-[0.25em] text-gold mb-1">{label}</div>
+        <div className="text-xs text-foreground leading-relaxed break-words">{value}</div>
       </div>
     </Wrap>
   );

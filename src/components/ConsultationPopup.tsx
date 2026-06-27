@@ -108,13 +108,12 @@ export function ConsultationPopup() {
                     <div className="text-[10px] uppercase tracking-[0.25em] text-gold">
                       Free Consultation
                     </div>
-                    <div className="font-display text-lg text-foreground">
-                      VZN Architect
-                    </div>
+                    <div className="font-display text-lg text-foreground">VZN Architect</div>
                   </div>
                 </div>
                 <p className="text-xs text-muted-foreground mt-3 mb-6 leading-relaxed">
-                  Get expert architectural guidance for your dream project. Share your details and our team will reach out within 24 hours.
+                  Get expert architectural guidance for your dream project. Share your details and
+                  our team will reach out within 24 hours.
                 </p>
 
                 {/* Form */}
@@ -166,9 +165,7 @@ export function ConsultationPopup() {
                       placeholder="Tell us about your project..."
                       rows={3}
                       value={formData.message}
-                      onChange={(e) =>
-                        setFormData({ ...formData, message: e.target.value })
-                      }
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full bg-surface border border-gold/20 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/50 transition-colors resize-none"
                     />
                   </div>
@@ -198,11 +195,10 @@ export function ConsultationPopup() {
                 >
                   <CheckCircle size={32} strokeWidth={1.2} />
                 </motion.div>
-                <h3 className="font-display text-2xl text-foreground mb-2">
-                  Thank You!
-                </h3>
+                <h3 className="font-display text-2xl text-foreground mb-2">Thank You!</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">
-                  Your consultation request has been received. Our team will contact you within 24 hours.
+                  Your consultation request has been received. Our team will contact you within 24
+                  hours.
                 </p>
               </div>
             )}

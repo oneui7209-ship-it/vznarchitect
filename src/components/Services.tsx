@@ -24,14 +24,62 @@ import s7 from "@/assets/project-5.jpg"; // Vastu consultation
 import s8 from "@/assets/project-1.jpg"; // Construction services
 
 const services = [
-  { n: "01", icon: Building2, title: "Architectural Design", desc: "Bespoke residential & commercial architecture tailored to your land and lifestyle.", img: s1 },
-  { n: "02", icon: Sofa, title: "Interior Design", desc: "Curated interiors with premium finishes, lighting and bespoke joinery.", img: s2 },
-  { n: "03", icon: Box, title: "3D Visualization", desc: "Photoreal renders & walkthroughs to experience your space before it's built.", img: s3 },
-  { n: "04", icon: ClipboardCheck, title: "Project Consultation", desc: "Expert guidance across feasibility, budgeting and design strategy.", img: s4 },
-  { n: "05", icon: FileCheck2, title: "Building Approval", desc: "HSIDC, DTP, HSVP & ULR sanctions handled end-to-end.", img: s6 },
-  { n: "06", icon: Ruler, title: "Layout Planning", desc: "Optimized 2D & 3D layouts that balance vastu, flow and function.", img: s5 },
-  { n: "07", icon: Sparkles, title: "Vastu Consultation", desc: "Traditional vastu principles integrated into modern design.", img: s7 },
-  { n: "08", icon: HardHat, title: "Construction Services", desc: "Turnkey residential & commercial construction with quality control.", img: s8 },
+  {
+    n: "01",
+    icon: Building2,
+    title: "Architectural Design",
+    desc: "Bespoke residential & commercial architecture tailored to your land and lifestyle.",
+    img: s1,
+  },
+  {
+    n: "02",
+    icon: Sofa,
+    title: "Interior Design",
+    desc: "Curated interiors with premium finishes, lighting and bespoke joinery.",
+    img: s2,
+  },
+  {
+    n: "03",
+    icon: Box,
+    title: "3D Visualization",
+    desc: "Photoreal renders & walkthroughs to experience your space before it's built.",
+    img: s3,
+  },
+  {
+    n: "04",
+    icon: ClipboardCheck,
+    title: "Project Consultation",
+    desc: "Expert guidance across feasibility, budgeting and design strategy.",
+    img: s4,
+  },
+  {
+    n: "05",
+    icon: FileCheck2,
+    title: "Building Approval",
+    desc: "HSIDC, DTP, HSVP & ULR sanctions handled end-to-end.",
+    img: s6,
+  },
+  {
+    n: "06",
+    icon: Ruler,
+    title: "Layout Planning",
+    desc: "Optimized 2D & 3D layouts that balance vastu, flow and function.",
+    img: s5,
+  },
+  {
+    n: "07",
+    icon: Sparkles,
+    title: "Vastu Consultation",
+    desc: "Traditional vastu principles integrated into modern design.",
+    img: s7,
+  },
+  {
+    n: "08",
+    icon: HardHat,
+    title: "Construction Services",
+    desc: "Turnkey residential & commercial construction with quality control.",
+    img: s8,
+  },
 ];
 
 export function Services() {
@@ -55,12 +103,12 @@ export function Services() {
       if (scrollRef.current) {
         const nextIndex = (scrollIndex + 1) % services.length;
         const width = scrollRef.current.offsetWidth;
-        
+
         scrollRef.current.scrollTo({
           left: (width - 16) * nextIndex,
           behavior: "smooth",
         });
-        
+
         setScrollIndex(nextIndex);
       }
     }, 2000);
@@ -74,7 +122,7 @@ export function Services() {
       const width = scrollRef.current.offsetWidth;
       const scrollLeft = scrollRef.current.scrollLeft;
       const idx = Math.round(scrollLeft / (width - 16));
-      
+
       // Debounce updating state to prevent scroll loops
       setScrollIndex((prev) => {
         if (Math.abs(prev - idx) > 0.1) {
@@ -105,14 +153,13 @@ export function Services() {
               </span>
             </div>
             <h2 className="font-display font-light text-3xl sm:text-4xl lg:text-5xl leading-[1.1] max-w-3xl">
-              Services crafted for{" "}
-              <span className="italic text-gold-gradient">discerning</span>{" "}
+              Services crafted for <span className="italic text-gold-gradient">discerning</span>{" "}
               clients
             </h2>
           </div>
           <p className="text-muted-foreground max-w-sm text-xs sm:text-sm leading-relaxed">
-            A full spectrum of architecture, interiors and planning — delivered
-            with the rigor of a luxury studio.
+            A full spectrum of architecture, interiors and planning — delivered with the rigor of a
+            luxury studio.
           </p>
         </div>
 
@@ -159,7 +206,7 @@ export function Services() {
                 </div>
                 <span className="font-display text-xs text-gold/60">{s.n}</span>
               </div>
-              
+
               <div className="relative z-20 mt-6">
                 <h3 className="font-display text-lg lg:text-xl text-foreground mb-2 leading-tight">
                   {s.title}
@@ -204,14 +251,11 @@ export function Services() {
 
               <div className="relative z-20 flex items-start justify-between">
                 <div className="w-10 h-10 border border-gold/30 rounded-sm grid place-items-center text-gold bg-background/50 backdrop-blur-sm">
-                  <s.icon
-                    size={18}
-                    strokeWidth={1.2}
-                  />
+                  <s.icon size={18} strokeWidth={1.2} />
                 </div>
                 <span className="font-display text-xs text-gold/60">{s.n}</span>
               </div>
-              
+
               <div className="relative z-20 mt-6">
                 <h3 className="font-display text-lg text-foreground mb-2 leading-tight">
                   {s.title}

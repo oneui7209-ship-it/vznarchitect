@@ -26,48 +26,84 @@ const steps = [
     title: "Consultation & Briefing",
     duration: "Week 1",
     desc: "Understand your vision, site coordinates, budget constraints, and aesthetic aspirations.",
-    details: "During the initial phase, we host a review at our Jhajjar studio or virtual meeting. We assess your plot boundaries, study orientation parameters, and coordinate an initial project wishlist detailing rooms, levels, and style choices.",
-    bullets: ["Site context & orientation reviews", "Client preference gathering", "Zoning and budget alignment", "Workflow schedule confirmation"],
+    details:
+      "During the initial phase, we host a review at our Jhajjar studio or virtual meeting. We assess your plot boundaries, study orientation parameters, and coordinate an initial project wishlist detailing rooms, levels, and style choices.",
+    bullets: [
+      "Site context & orientation reviews",
+      "Client preference gathering",
+      "Zoning and budget alignment",
+      "Workflow schedule confirmation",
+    ],
   },
   {
     n: "02",
     title: "Feasibility & Vastu Planning",
     duration: "Weeks 1-2",
     desc: "Zoning review, structural feasibility checks, and initial Vastu compliance mapping.",
-    details: "We evaluate municipal regulations (FAR, setbacks) and map room directions in accordance with Vastu principles. This ensures the foundational planning layout is positive, functional, and lawful.",
-    bullets: ["FAR (Floor Area Ratio) evaluations", "Vastu orientation mapping", "Initial zoning & municipal checks", "Space requirement calculations"],
+    details:
+      "We evaluate municipal regulations (FAR, setbacks) and map room directions in accordance with Vastu principles. This ensures the foundational planning layout is positive, functional, and lawful.",
+    bullets: [
+      "FAR (Floor Area Ratio) evaluations",
+      "Vastu orientation mapping",
+      "Initial zoning & municipal checks",
+      "Space requirement calculations",
+    ],
   },
   {
     n: "03",
     title: "Schematic Layout & Design",
     duration: "Weeks 2-4",
     desc: "Developing 2D layout drafts, dimensional plans, and starting material conceptualization.",
-    details: "Our team constructs initial 2D blueprints displaying wall positions, windows, entries, and modular furniture placements. We adjust these drafts alongside your feedback until the layouts feel natural and optimized.",
-    bullets: ["2D floor layouts & dimensions", "Furniture layout maps", "Window and door placements", "Initial structural coordinates"],
+    details:
+      "Our team constructs initial 2D blueprints displaying wall positions, windows, entries, and modular furniture placements. We adjust these drafts alongside your feedback until the layouts feel natural and optimized.",
+    bullets: [
+      "2D floor layouts & dimensions",
+      "Furniture layout maps",
+      "Window and door placements",
+      "Initial structural coordinates",
+    ],
   },
   {
     n: "04",
     title: "3D Rendering & Visualization",
     duration: "Weeks 4-6",
     desc: "Creating cinematic walkthrough videos and photorealistic 3D external and internal elevations.",
-    details: "We transform 2D drawings into premium, lifelike 3D models. You see the exact paint colors, glass placements, texture layouts, lighting placements, and landscape design before allocating capital on materials.",
-    bullets: ["3D exterior facades & elevations", "3D interior rendering files", "Cinematic walkthrough walkthroughs", "Material mockups & selections"],
+    details:
+      "We transform 2D drawings into premium, lifelike 3D models. You see the exact paint colors, glass placements, texture layouts, lighting placements, and landscape design before allocating capital on materials.",
+    bullets: [
+      "3D exterior facades & elevations",
+      "3D interior rendering files",
+      "Cinematic walkthrough walkthroughs",
+      "Material mockups & selections",
+    ],
   },
   {
     n: "05",
     title: "Working Blueprints & Approvals",
     duration: "Weeks 6-8",
     desc: "Preparing construction drawings and filing for building approval sanctions.",
-    details: "We draft plumbing, electrical, and structural engineering layout files. Simultaneously, we coordinate paperwork and map compliant blueprints for HSVP, HSIDC, DTP, CLU, or local Jhajjar municipal boards.",
-    bullets: ["Detailed structural drawings", "Electrical & plumbing blueprints", "Municipal map filing documentation", "Coordination with building inspectors"],
+    details:
+      "We draft plumbing, electrical, and structural engineering layout files. Simultaneously, we coordinate paperwork and map compliant blueprints for HSVP, HSIDC, DTP, CLU, or local Jhajjar municipal boards.",
+    bullets: [
+      "Detailed structural drawings",
+      "Electrical & plumbing blueprints",
+      "Municipal map filing documentation",
+      "Coordination with building inspectors",
+    ],
   },
   {
     n: "06",
     title: "Execution & Site Turnkey Handover",
     duration: "Construction Phase",
     desc: "Turnkey construction coordination, site inspection visits, and final quality sign-off.",
-    details: "If you choose VZN turnkey services, we execute the structure under trained engineering staff. If you hire an independent builder, we conduct regular site inspections to ensure concrete, materials, and layouts match our design coordinates.",
-    bullets: ["Turnkey construction coordination", "Regular site supervisor checks", "Material check & load testing verification", "Final finishing review & key delivery"],
+    details:
+      "If you choose VZN turnkey services, we execute the structure under trained engineering staff. If you hire an independent builder, we conduct regular site inspections to ensure concrete, materials, and layouts match our design coordinates.",
+    bullets: [
+      "Turnkey construction coordination",
+      "Regular site supervisor checks",
+      "Material check & load testing verification",
+      "Final finishing review & key delivery",
+    ],
   },
 ];
 
@@ -105,7 +141,8 @@ function ProcessPage() {
                 Our <span className="italic text-gold-gradient">Process</span>
               </h1>
               <p className="mt-6 text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-                A structured, transparent workflow designed to guide you from initial design concept to turnkey physical handover, avoiding layout errors.
+                A structured, transparent workflow designed to guide you from initial design concept
+                to turnkey physical handover, avoiding layout errors.
               </p>
             </motion.div>
           </div>
@@ -172,7 +209,8 @@ function ProcessPage() {
               Ready to begin your <span className="italic text-gold-gradient">design</span> journey?
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground max-w-lg mx-auto mb-8 leading-relaxed">
-              We begin every project with a details consultation. Fill out our simple contact form or call us to reserve a review.
+              We begin every project with a details consultation. Fill out our simple contact form
+              or call us to reserve a review.
             </p>
             <button
               onClick={() => {

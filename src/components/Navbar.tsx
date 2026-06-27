@@ -51,9 +51,7 @@ export function Navbar() {
       <div
         ref={stripeRef}
         className={`fixed inset-x-0 top-0 z-[60] transition-all duration-500 ease-out ${
-          scrolled
-            ? "opacity-0 -translate-y-full pointer-events-none"
-            : "opacity-100 translate-y-0"
+          scrolled ? "opacity-0 -translate-y-full pointer-events-none" : "opacity-100 translate-y-0"
         }`}
       >
         <div className="relative overflow-hidden bg-gradient-to-r from-background via-background/95 to-background border-b border-gold/20">
@@ -93,11 +91,7 @@ export function Navbar() {
         style={!scrolled ? { top: `${stripeHeight}px` } : undefined}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-3 sm:px-8">
-          <Link
-            to="/"
-            onClick={() => setOpen(false)}
-            className="flex items-center gap-2 group"
-          >
+          <Link to="/" onClick={() => setOpen(false)} className="flex items-center gap-2 group">
             <img
               src={logo}
               alt="VZN Architect"
@@ -146,7 +140,7 @@ export function Navbar() {
             >
               Consultation
             </button>
-            
+
             <button
               onClick={() => setOpen(!open)}
               className="text-gold p-1.5 cursor-pointer"

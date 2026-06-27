@@ -20,8 +20,7 @@ export function CursorGlow() {
       style={{
         left: pos.x,
         top: pos.y,
-        background:
-          "radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 60%)",
+        background: "radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 60%)",
         mixBlendMode: "screen",
       }}
     />

@@ -37,64 +37,112 @@ const servicesDetail = [
     title: "Architectural Design",
     n: "01",
     desc: "Bespoke residential & commercial architecture tailored to your land and lifestyle.",
-    details: "We design structures that harmonize luxury and efficiency. From residential villas to corporate towers, we create masterplans, elevation files, and working drawings that stand out.",
-    points: ["Modern, Classical & Fusion facades", "Full structural loading designs", "Plumbing & Electrical layout plans", "Site zoning & boundary outlines"],
+    details:
+      "We design structures that harmonize luxury and efficiency. From residential villas to corporate towers, we create masterplans, elevation files, and working drawings that stand out.",
+    points: [
+      "Modern, Classical & Fusion facades",
+      "Full structural loading designs",
+      "Plumbing & Electrical layout plans",
+      "Site zoning & boundary outlines",
+    ],
   },
   {
     icon: Sofa,
     title: "Interior Design",
     n: "02",
     desc: "Curated interiors with premium finishes, lighting and bespoke joinery.",
-    details: "Your interior should reflect your personal narrative. We plan custom lighting, premium wall panels, modular kitchens, ceiling elevations, and specify textures that breathe elegance.",
-    points: ["Living room & Bedroom design layouts", "Custom furniture detailing & selections", "Lighting plans & custom automation advice", "Premium wall, paint & tile specifications"],
+    details:
+      "Your interior should reflect your personal narrative. We plan custom lighting, premium wall panels, modular kitchens, ceiling elevations, and specify textures that breathe elegance.",
+    points: [
+      "Living room & Bedroom design layouts",
+      "Custom furniture detailing & selections",
+      "Lighting plans & custom automation advice",
+      "Premium wall, paint & tile specifications",
+    ],
   },
   {
     icon: Box,
     title: "3D Visualization",
     n: "03",
     desc: "Photoreal renders & walkthroughs to experience your space before it's built.",
-    details: "Walk through your prospective project using high-definition 3D visualization. Make informed adjustments to materials, paint, and sizes before launching brickwork on site.",
-    points: ["Photorealistic exterior elevations", "High-definition interior rendering", "Cinematic walkthrough animations", "Day/Night lighting simulations"],
+    details:
+      "Walk through your prospective project using high-definition 3D visualization. Make informed adjustments to materials, paint, and sizes before launching brickwork on site.",
+    points: [
+      "Photorealistic exterior elevations",
+      "High-definition interior rendering",
+      "Cinematic walkthrough animations",
+      "Day/Night lighting simulations",
+    ],
   },
   {
     icon: ClipboardCheck,
     title: "Project Consultation",
     n: "04",
     desc: "Expert guidance across feasibility, budgeting and design strategy.",
-    details: "Get guidance before investing resources. We analyze your plot sizes, zoning laws, material budgets, and construction milestones to avoid project delays.",
-    points: ["Cost estimations & cost control plans", "Zoning regulation compliance review", "Material sourcing & quality guidelines", "Site safety & timeline forecasting"],
+    details:
+      "Get guidance before investing resources. We analyze your plot sizes, zoning laws, material budgets, and construction milestones to avoid project delays.",
+    points: [
+      "Cost estimations & cost control plans",
+      "Zoning regulation compliance review",
+      "Material sourcing & quality guidelines",
+      "Site safety & timeline forecasting",
+    ],
   },
   {
     icon: FileCheck2,
     title: "Building Approval",
     n: "05",
     desc: "HSIDC, DTP, HSVP & ULR sanctions handled end-to-end.",
-    details: "Navigating regulatory protocols is complex. We draft municipal-compliant layouts and coordinate approvals for HSIDC, DTP, HSVP, CLU, and ULR authorities.",
-    points: ["Municipal drawing submissions", "Zoning and Floor Area Ratio compliance", "CLU (Change of Land Use) applications", "Occupancy certificate filing support"],
+    details:
+      "Navigating regulatory protocols is complex. We draft municipal-compliant layouts and coordinate approvals for HSIDC, DTP, HSVP, CLU, and ULR authorities.",
+    points: [
+      "Municipal drawing submissions",
+      "Zoning and Floor Area Ratio compliance",
+      "CLU (Change of Land Use) applications",
+      "Occupancy certificate filing support",
+    ],
   },
   {
     icon: Ruler,
     title: "Layout Planning",
     n: "06",
     desc: "Optimized 2D & 3D layouts that balance vastu, flow and function.",
-    details: "Maximize floor efficiency. We design space blueprints that balance space optimization, human ergonomics, Vastu Shastra compliance, and visual flow.",
-    points: ["2D floor layouts & furniture maps", "3D floor plans for space clarity", "Optimized room-to-room flow design", "Vastu-based entry & kitchen alignments"],
+    details:
+      "Maximize floor efficiency. We design space blueprints that balance space optimization, human ergonomics, Vastu Shastra compliance, and visual flow.",
+    points: [
+      "2D floor layouts & furniture maps",
+      "3D floor plans for space clarity",
+      "Optimized room-to-room flow design",
+      "Vastu-based entry & kitchen alignments",
+    ],
   },
   {
     icon: Sparkles,
     title: "Vastu Consultation",
     n: "07",
     desc: "Traditional vastu principles integrated into modern design.",
-    details: "Promote health, prosperity, and peace. We weave traditional Vedic Vastu Shastra rules into contemporary layouts without compromising modern spatial aesthetics.",
-    points: ["Directional layouts for entries & kitchens", "Energy flow analysis for rooms", "Remedial Vastu advice for existing plots", "Auspicious measurements mapping"],
+    details:
+      "Promote health, prosperity, and peace. We weave traditional Vedic Vastu Shastra rules into contemporary layouts without compromising modern spatial aesthetics.",
+    points: [
+      "Directional layouts for entries & kitchens",
+      "Energy flow analysis for rooms",
+      "Remedial Vastu advice for existing plots",
+      "Auspicious measurements mapping",
+    ],
   },
   {
     icon: HardHat,
     title: "Construction Services",
     n: "08",
     desc: "Turnkey residential & commercial construction with quality control.",
-    details: "Bring concepts to life with zero stress. We provide end-to-end turnkey construction solutions using high-grade materials, trained engineers, and precise scheduling.",
-    points: ["A-Grade material supply & control", "On-site engineer-led supervision", "Milestone-based progress reporting", "Turnkey key handover on completion"],
+    details:
+      "Bring concepts to life with zero stress. We provide end-to-end turnkey construction solutions using high-grade materials, trained engineers, and precise scheduling.",
+    points: [
+      "A-Grade material supply & control",
+      "On-site engineer-led supervision",
+      "Milestone-based progress reporting",
+      "Turnkey key handover on completion",
+    ],
   },
 ];
 
@@ -147,7 +195,8 @@ function ServicesPage() {
                 Our <span className="italic text-gold-gradient">Expertise</span>
               </h1>
               <p className="mt-6 text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-                From residential blueprints and luxury interiors to regulatory sanctions, we coordinate execution across Jhajjar, Rohtak, Gurugram, and NCR.
+                From residential blueprints and luxury interiors to regulatory sanctions, we
+                coordinate execution across Jhajjar, Rohtak, Gurugram, and NCR.
               </p>
             </motion.div>
           </div>
@@ -248,10 +297,12 @@ function ServicesPage() {
         <section className="py-20 bg-background relative overflow-hidden">
           <div className="relative mx-auto max-w-4xl px-5 sm:px-8 text-center">
             <h2 className="font-display font-light text-3xl sm:text-4xl mb-6">
-              Get an accurate estimate for your <span className="italic text-gold-gradient">plot</span>
+              Get an accurate estimate for your{" "}
+              <span className="italic text-gold-gradient">plot</span>
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground max-w-lg mx-auto mb-8 leading-relaxed">
-              Tell us your plot size, zoning details, and whether you need interiors or turnkey building works.
+              Tell us your plot size, zoning details, and whether you need interiors or turnkey
+              building works.
             </p>
             <button
               onClick={() => {

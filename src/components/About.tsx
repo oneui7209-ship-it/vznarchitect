@@ -3,10 +3,26 @@ import { Compass, ShieldCheck, Users, Layers } from "lucide-react";
 import about from "@/assets/parveen-profile.png";
 
 const highlights = [
-  { icon: Compass, title: "Creative Design", text: "Original concepts rooted in site, climate and lifestyle." },
-  { icon: ShieldCheck, title: "Quality Assurance", text: "Rigorous detailing & material specifications on every drawing." },
-  { icon: Users, title: "Client Focused", text: "Transparent process, regular reviews, lasting relationships." },
-  { icon: Layers, title: "End-to-End", text: "From first sketch to final handover — under one roof." },
+  {
+    icon: Compass,
+    title: "Creative Design",
+    text: "Original concepts rooted in site, climate and lifestyle.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Quality Assurance",
+    text: "Rigorous detailing & material specifications on every drawing.",
+  },
+  {
+    icon: Users,
+    title: "Client Focused",
+    text: "Transparent process, regular reviews, lasting relationships.",
+  },
+  {
+    icon: Layers,
+    title: "End-to-End",
+    text: "From first sketch to final handover — under one roof.",
+  },
 ];
 
 export function About() {
@@ -36,15 +52,9 @@ export function About() {
             <div className="absolute -bottom-3 -right-3 w-20 h-20 border-b-2 border-r-2 border-gold" />
             {/* Floating card */}
             <div className="absolute -bottom-8 -left-4 sm:left-8 glass px-6 py-5 max-w-[260px]">
-              <div className="text-xs uppercase tracking-[0.25em] text-gold mb-2">
-                Founder
-              </div>
-              <div className="font-display text-2xl text-foreground">
-                Parveen (Veer)
-              </div>
-              <div className="text-xs text-muted-foreground mt-1">
-                Principal Architect
-              </div>
+              <div className="text-xs uppercase tracking-[0.25em] text-gold mb-2">Founder</div>
+              <div className="font-display text-2xl text-foreground">Parveen (Veer)</div>
+              <div className="text-xs text-muted-foreground mt-1">Principal Architect</div>
             </div>
           </motion.div>
 
@@ -68,10 +78,9 @@ export function About() {
               <span className="italic text-gold-gradient">Our Architecture.</span>
             </h2>
             <p className="mt-7 text-muted-foreground leading-relaxed text-[15px] sm:text-base max-w-xl">
-              At VZN Architect, we transform ideas into timeless spaces. From
-              concept to completion, we deliver architecture, interiors and
-              planning solutions with precision and excellence — for homes,
-              offices and developments that endure.
+              At VZN Architect, we transform ideas into timeless spaces. From concept to completion,
+              we deliver architecture, interiors and planning solutions with precision and
+              excellence — for homes, offices and developments that endure.
             </p>
 
             <div className="mt-10 grid grid-cols-2 gap-px bg-gold/15">
@@ -84,7 +93,10 @@ export function About() {
                   transition={{ delay: 0.2 + i * 0.1, duration: 0.7 }}
                   className="bg-background p-4 sm:p-6 group hover:bg-surface transition-colors duration-500"
                 >
-                  <h.icon className="text-gold mb-3 sm:mb-4 h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1.2} />
+                  <h.icon
+                    className="text-gold mb-3 sm:mb-4 h-5 w-5 sm:h-6 sm:w-6"
+                    strokeWidth={1.2}
+                  />
                   <div className="font-display text-sm sm:text-lg text-foreground mb-1 leading-tight">
                     {h.title}
                   </div>

@@ -28,7 +28,7 @@ interface ProjectsProps {
 export function Projects({ limit, showAllButton = false }: ProjectsProps) {
   const [active, setActive] = useState("All");
   const [open, setOpen] = useState<number | null>(null);
-  
+
   const [scrollIndex, setScrollIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -53,12 +53,12 @@ export function Projects({ limit, showAllButton = false }: ProjectsProps) {
       if (scrollRef.current) {
         const nextIndex = (scrollIndex + 1) % visible.length;
         const width = scrollRef.current.offsetWidth;
-        
+
         scrollRef.current.scrollTo({
           left: (width - 16) * nextIndex,
           behavior: "smooth",
         });
-        
+
         setScrollIndex(nextIndex);
       }
     }, 2000);
@@ -72,7 +72,7 @@ export function Projects({ limit, showAllButton = false }: ProjectsProps) {
       const width = scrollRef.current.offsetWidth;
       const scrollLeft = scrollRef.current.scrollLeft;
       const idx = Math.round(scrollLeft / (width - 16));
-      
+
       setScrollIndex((prev) => {
         if (Math.abs(prev - idx) > 0.1) {
           return Math.max(0, Math.min(idx, visible.length - 1));
@@ -94,8 +94,7 @@ export function Projects({ limit, showAllButton = false }: ProjectsProps) {
               </span>
             </div>
             <h2 className="font-display font-light text-3xl sm:text-4xl lg:text-5xl leading-[1.1]">
-              A portfolio of{" "}
-              <span className="italic text-gold-gradient">timeless</span> spaces
+              A portfolio of <span className="italic text-gold-gradient">timeless</span> spaces
             </h2>
           </div>
 
@@ -120,7 +119,9 @@ export function Projects({ limit, showAllButton = false }: ProjectsProps) {
         </div>
 
         {/* Desktop View / Full Subpage: Columns masonry layout */}
-        <div className={`${limit ? "hidden md:columns-2 lg:columns-3" : "columns-1 sm:columns-2 lg:columns-3"} gap-5 [&>*]:mb-5`}>
+        <div
+          className={`${limit ? "hidden md:columns-2 lg:columns-3" : "columns-1 sm:columns-2 lg:columns-3"} gap-5 [&>*]:mb-5`}
+        >
           {visible.map((item, i) => (
             <motion.button
               layout
@@ -150,9 +151,7 @@ export function Projects({ limit, showAllButton = false }: ProjectsProps) {
                 <div className="text-[10px] uppercase tracking-[0.3em] text-gold mb-2">
                   {item.cat} · {item.loc}
                 </div>
-                <h3 className="font-display text-lg lg:text-xl text-foreground">
-                  {item.title}
-                </h3>
+                <h3 className="font-display text-lg lg:text-xl text-foreground">{item.title}</h3>
                 <div className="mt-3 h-px w-0 bg-gold group-hover:w-16 transition-all duration-500" />
               </div>
             </motion.button>
@@ -180,7 +179,7 @@ export function Projects({ limit, showAllButton = false }: ProjectsProps) {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-90 z-0" />
-                  
+
                   <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
                     <div className="text-[9px] uppercase tracking-[0.3em] text-gold mb-1.5">
                       {item.cat} · {item.loc}

@@ -5,12 +5,12 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import tailwindcss from "@tailwindcss/vite";
 
 // Check if running inside the Lovable sandbox environment to keep editor features active
-const isLovableSandbox = typeof process !== "undefined" && (
-  process.env.LOVABLE_SANDBOX === "1" || 
-  !!process.env.DEV_SERVER__PROJECT_PATH ||
-  !!process.env.LOVABLE ||
-  !!process.env.VITE_LOVABLE
-);
+const isLovableSandbox =
+  typeof process !== "undefined" &&
+  (process.env.LOVABLE_SANDBOX === "1" ||
+    !!process.env.DEV_SERVER__PROJECT_PATH ||
+    !!process.env.LOVABLE ||
+    !!process.env.VITE_LOVABLE);
 
 let configFn;
 
@@ -30,7 +30,7 @@ if (isLovableSandbox) {
 if (!configFn) {
   // Dynamically load nitro to keep imports clean
   const { nitro } = await import("nitro/vite");
-  
+
   configFn = defineStandardConfig({
     css: { transformer: "lightningcss" },
     resolve: {
@@ -47,7 +47,13 @@ if (!configFn) {
       ],
     },
     optimizeDeps: {
-      include: ["react", "react-dom", "react-dom/client", "react/jsx-runtime", "react/jsx-dev-runtime"],
+      include: [
+        "react",
+        "react-dom",
+        "react-dom/client",
+        "react/jsx-runtime",
+        "react/jsx-dev-runtime",
+      ],
       ignoreOutdatedRequests: true,
     },
     plugins: [

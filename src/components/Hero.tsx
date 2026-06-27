@@ -1,13 +1,9 @@
 import { motion } from "framer-motion";
 import heroBanner from "@/assets/vzn-hero-banner.png";
 
-
 export function Hero() {
   return (
-    <section
-      id="home"
-      className="relative w-full bg-background pt-[115px] md:pt-[120px]"
-    >
+    <section id="home" className="relative w-full bg-background pt-[115px] md:pt-[120px]">
       <div className="w-full h-auto overflow-hidden">
         <motion.div
           initial={{ scale: 1.02 }}
@@ -25,4 +21,3 @@ export function Hero() {
     </section>
   );
 }
-

@@ -32,9 +32,7 @@ export function Testimonials() {
       <div className="mx-auto max-w-5xl px-5 sm:px-8 text-center">
         <div className="flex items-center justify-center gap-4 mb-5">
           <div className="h-px w-10 bg-gold" />
-          <span className="text-[11px] uppercase tracking-[0.35em] text-gold">
-            Client Voices
-          </span>
+          <span className="text-[11px] uppercase tracking-[0.35em] text-gold">Client Voices</span>
           <div className="h-px w-10 bg-gold" />
         </div>
         <h2 className="font-display font-light text-4xl sm:text-5xl mb-14">
@@ -42,11 +40,7 @@ export function Testimonials() {
         </h2>
 
         <div className="relative glass p-8 sm:p-14 min-h-[280px] flex items-center justify-center">
-          <Quote
-            className="absolute top-6 left-6 text-gold/20"
-            size={60}
-            strokeWidth={1}
-          />
+          <Quote className="absolute top-6 left-6 text-gold/20" size={60} strokeWidth={1} />
           <AnimatePresence mode="wait">
             <motion.div
               key={i}
@@ -67,9 +61,7 @@ export function Testimonials() {
               <div className="mt-5 font-sans text-sm uppercase tracking-[0.2em] text-foreground">
                 {list[i].name}
               </div>
-              <div className="text-xs text-muted-foreground mt-1.5">
-                {list[i].role}
-              </div>
+              <div className="text-xs text-muted-foreground mt-1.5">{list[i].role}</div>
             </motion.div>
           </AnimatePresence>
 

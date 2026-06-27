@@ -8,7 +8,6 @@ export function Footer() {
       <div className="absolute inset-x-0 top-0 hairline" />
       <div className="mx-auto max-w-7xl px-5 sm:px-8 py-16 lg:py-20">
         <div className="grid gap-10 grid-cols-2 lg:grid-cols-12">
-          
           {/* Brand - Span full 2 columns on mobile, 4 columns on desktop */}
           <div className="col-span-2 lg:col-span-4">
             <div className="flex items-center gap-3 mb-5">
@@ -24,8 +23,8 @@ export function Footer() {
               Your Vision. Our Architecture.
             </p>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-sm">
-              A luxury architecture studio crafting timeless residential,
-              commercial and interior spaces from Jhajjar, Haryana.
+              A luxury architecture studio crafting timeless residential, commercial and interior
+              spaces from Jhajjar, Haryana.
             </p>
             <div className="flex items-center gap-3 mt-6">
               {[
@@ -49,23 +48,32 @@ export function Footer() {
 
           {/* Services - Span 1 column on mobile, 3 columns on desktop */}
           <div className="col-span-1 lg:col-span-3">
-            <h4 className="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-gold mb-4 sm:mb-5">Services</h4>
+            <h4 className="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-gold mb-4 sm:mb-5">
+              Services
+            </h4>
             <ul className="space-y-2.5 sm:space-y-3 text-xs sm:text-sm text-muted-foreground">
-              {["Architectural Design", "Interior Design", "3D Visualization", "Building Approval", "Vastu Consultation", "Construction"].map(
-                (s) => (
-                  <li key={s}>
-                    <Link to="/services" className="hover:text-gold transition-colors">
-                      {s}
-                    </Link>
-                  </li>
-                )
-              )}
+              {[
+                "Architectural Design",
+                "Interior Design",
+                "3D Visualization",
+                "Building Approval",
+                "Vastu Consultation",
+                "Construction",
+              ].map((s) => (
+                <li key={s}>
+                  <Link to="/services" className="hover:text-gold transition-colors">
+                    {s}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Quick Links - Span 1 column on mobile, 2 columns on desktop */}
           <div className="col-span-1 lg:col-span-2">
-            <h4 className="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-gold mb-4 sm:mb-5">Explore</h4>
+            <h4 className="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-gold mb-4 sm:mb-5">
+              Explore
+            </h4>
             <ul className="space-y-2.5 sm:space-y-3 text-xs sm:text-sm text-muted-foreground">
               {[
                 ["About", "/about"],
@@ -84,11 +92,15 @@ export function Footer() {
 
           {/* Contact - Span full 2 columns on mobile, 3 columns on desktop */}
           <div className="col-span-2 lg:col-span-3">
-            <h4 className="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-gold mb-4 sm:mb-5">Contact</h4>
+            <h4 className="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-gold mb-4 sm:mb-5">
+              Contact
+            </h4>
             <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm text-muted-foreground">
               <li className="flex items-start gap-3">
                 <Phone size={13} className="text-gold mt-1 shrink-0" />
-                <a href="tel:8950078109" className="hover:text-gold">+91 89500 78109</a>
+                <a href="tel:8950078109" className="hover:text-gold">
+                  +91 89500 78109
+                </a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={13} className="text-gold mt-1 shrink-0" />
@@ -99,8 +111,8 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={13} className="text-gold mt-1 shrink-0" />
                 <span className="leading-relaxed">
-                  Mahaveer Market, Near Cooperative Bank, Opp. Mini Sachivalaya,
-                  Dadri Toye, Jhajjar (HR.)
+                  Mahaveer Market, Near Cooperative Bank, Opp. Mini Sachivalaya, Dadri Toye, Jhajjar
+                  (HR.)
                 </span>
               </li>
             </ul>
@@ -110,7 +122,8 @@ export function Footer() {
         {/* Designed Copyright & Developer Section */}
         <div className="mt-12 lg:mt-16 pt-6 lg:pt-8 border-t border-gold/15 flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-[11px] sm:text-xs text-muted-foreground text-center md:text-left">
           <div className="leading-relaxed">
-            © 2026 <span className="text-gold font-display font-medium">VZN Architect</span>. <br className="md:hidden" /> All Rights Reserved.
+            © 2026 <span className="text-gold font-display font-medium">VZN Architect</span>.{" "}
+            <br className="md:hidden" /> All Rights Reserved.
           </div>
           <div className="md:text-right leading-relaxed">
             Designed & Developed by{" "}

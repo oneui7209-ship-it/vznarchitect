@@ -55,7 +55,8 @@ function ProjectsPage() {
                 Selected <span className="italic text-gold-gradient">Works</span>
               </h1>
               <p className="mt-6 text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-                A gallery of luxury villas, turnkey residences, corporate showrooms, and premium photorealistic visualizations conceptualized in our studio.
+                A gallery of luxury villas, turnkey residences, corporate showrooms, and premium
+                photorealistic visualizations conceptualized in our studio.
               </p>
             </motion.div>
           </div>
@@ -71,7 +72,8 @@ function ProjectsPage() {
               Have a custom project <span className="italic text-gold-gradient">concept</span>?
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground max-w-lg mx-auto mb-8 leading-relaxed">
-              We translate conceptual visions into structural realities. Connect with our engineering and interior team for a structural consultation.
+              We translate conceptual visions into structural realities. Connect with our
+              engineering and interior team for a structural consultation.
             </p>
             <button
               onClick={() => {

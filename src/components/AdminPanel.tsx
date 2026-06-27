@@ -46,8 +46,7 @@ export function AdminPanel() {
   const [filterService, setFilterService] = useState("");
   const [showPass, setShowPass] = useState(false);
   const [loginError, setLoginError] = useState("");
-  const [selectedSubmission, setSelectedSubmission] =
-    useState<ConsultationSubmission | null>(null);
+  const [selectedSubmission, setSelectedSubmission] = useState<ConsultationSubmission | null>(null);
 
   const load = async () => {
     setLoading(true);
@@ -106,7 +105,15 @@ export function AdminPanel() {
 
   const services = [...new Set(submissions.map((s) => s.service).filter(Boolean))];
 
-  if (!loggedIn) return <LoginScreen onSubmit={handleLogin} error={loginError} showPass={showPass} setShowPass={setShowPass} />;
+  if (!loggedIn)
+    return (
+      <LoginScreen
+        onSubmit={handleLogin}
+        error={loginError}
+        showPass={showPass}
+        setShowPass={setShowPass}
+      />
+    );
 
   return (
     <div className="min-h-screen bg-background">
@@ -120,9 +127,7 @@ export function AdminPanel() {
             </h1>
           </div>
           <div className="flex items-center gap-3">
-            <span className="hidden sm:block text-xs text-muted-foreground">
-              Welcome, Admin
-            </span>
+            <span className="hidden sm:block text-xs text-muted-foreground">Welcome, Admin</span>
             <button
               onClick={handleLogout}
               className="flex items-center gap-2 border border-gold/30 px-4 py-2 text-xs uppercase tracking-[0.15em] text-gold hover:bg-gold hover:text-gold-foreground transition-all duration-300 cursor-pointer"
@@ -146,9 +151,7 @@ export function AdminPanel() {
             label="This Week"
             value={
               submissions.filter(
-                (s) =>
-                  Date.now() - new Date(s.submittedAt).getTime() <
-                  7 * 24 * 60 * 60 * 1000
+                (s) => Date.now() - new Date(s.submittedAt).getTime() < 7 * 24 * 60 * 60 * 1000,
               ).length
             }
             icon={<Calendar size={18} />}
@@ -162,9 +165,7 @@ export function AdminPanel() {
             label="Today"
             value={
               submissions.filter(
-                (s) =>
-                  new Date(s.submittedAt).toDateString() ===
-                  new Date().toDateString()
+                (s) => new Date(s.submittedAt).toDateString() === new Date().toDateString(),
               ).length
             }
             icon={<Mail size={18} />}
@@ -253,12 +254,8 @@ export function AdminPanel() {
                     className="border-b border-gold/10 hover:bg-muted/50 transition-colors cursor-pointer"
                     onClick={() => setSelectedSubmission(s)}
                   >
-                    <td className="px-5 py-4 text-xs text-muted-foreground">
-                      {i + 1}
-                    </td>
-                    <td className="px-5 py-4 text-sm text-foreground font-medium">
-                      {s.name}
-                    </td>
+                    <td className="px-5 py-4 text-xs text-muted-foreground">{i + 1}</td>
+                    <td className="px-5 py-4 text-sm text-foreground font-medium">{s.name}</td>
                     <td className="px-5 py-4 text-xs text-muted-foreground">
                       {s.phone}
                       <br />
@@ -311,9 +308,7 @@ export function AdminPanel() {
                 <div className="flex items-start justify-between mb-2">
                   <div className="flex items-center gap-2">
                     <span className="text-[10px] text-muted-foreground">#{i + 1}</span>
-                    <h3 className="text-sm font-medium text-foreground">
-                      {s.name}
-                    </h3>
+                    <h3 className="text-sm font-medium text-foreground">{s.name}</h3>
                   </div>
                   <button
                     onClick={(e) => {
@@ -374,9 +369,7 @@ export function AdminPanel() {
               <div className="h-1 w-full bg-gold-gradient" />
               <div className="p-6 sm:p-8">
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="font-display text-xl text-foreground">
-                    Submission Details
-                  </h3>
+                  <h3 className="font-display text-xl text-foreground">Submission Details</h3>
                   <button
                     onClick={() => setSelectedSubmission(null)}
                     className="text-muted-foreground hover:text-gold transition-colors cursor-pointer"
@@ -471,10 +464,7 @@ function LoginScreen({
         </div>
 
         {/* Form */}
-        <form
-          onSubmit={onSubmit}
-          className="bg-surface border border-gold/15 p-6 sm:p-8 space-y-5"
-        >
+        <form onSubmit={onSubmit} className="bg-surface border border-gold/15 p-6 sm:p-8 space-y-5">
           <div>
             <label className="block text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1.5">
               Username
@@ -519,9 +509,7 @@ function LoginScreen({
             </div>
           </div>
 
-          {error && (
-            <p className="text-xs text-red-400 text-center">{error}</p>
-          )}
+          {error && <p className="text-xs text-red-400 text-center">{error}</p>}
 
           <button
             type="submit"
@@ -539,21 +527,11 @@ function LoginScreen({
   );
 }
 
-function StatCard({
-  label,
-  value,
-  icon,
-}: {
-  label: string;
-  value: number;
-  icon: React.ReactNode;
-}) {
+function StatCard({ label, value, icon }: { label: string; value: number; icon: React.ReactNode }) {
   return (
     <div className="bg-surface border border-gold/15 p-4 sm:p-5">
       <div className="flex items-center gap-2 mb-2 text-gold">{icon}</div>
-      <div className="font-display text-2xl sm:text-3xl text-foreground">
-        {value}
-      </div>
+      <div className="font-display text-2xl sm:text-3xl text-foreground">{value}</div>
       <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1">
         {label}
       </div>
@@ -576,9 +554,7 @@ function DetailRow({
         {icon}
       </div>
       <div className="min-w-0">
-        <div className="text-[10px] uppercase tracking-[0.2em] text-gold mb-0.5">
-          {label}
-        </div>
+        <div className="text-[10px] uppercase tracking-[0.2em] text-gold mb-0.5">{label}</div>
         <div className="text-sm text-foreground break-words">{value}</div>
       </div>
     </div>

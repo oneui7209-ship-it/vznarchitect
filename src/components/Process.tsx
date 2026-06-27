@@ -29,14 +29,11 @@ export function Process() {
         <div className="text-center mb-12 lg:mb-20">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-px w-10 bg-gold" />
-            <span className="text-[11px] uppercase tracking-[0.35em] text-gold">
-              Our Process
-            </span>
+            <span className="text-[11px] uppercase tracking-[0.35em] text-gold">Our Process</span>
             <div className="h-px w-10 bg-gold" />
           </div>
           <h2 className="font-display font-light text-3xl sm:text-4xl lg:text-5xl">
-            From concept to{" "}
-            <span className="italic text-gold-gradient">completion</span>
+            From concept to <span className="italic text-gold-gradient">completion</span>
           </h2>
         </div>
 
@@ -56,12 +53,8 @@ export function Process() {
                 <div className="mx-auto mb-6 w-12 h-12 rounded-full bg-background border border-gold flex items-center justify-center font-display text-gold gold-glow">
                   {s.n}
                 </div>
-                <h3 className="font-display text-lg text-foreground mb-2">
-                  {s.title}
-                </h3>
-                <p className="text-xs text-muted-foreground leading-relaxed px-2">
-                  {s.desc}
-                </p>
+                <h3 className="font-display text-lg text-foreground mb-2">{s.title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed px-2">{s.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -83,12 +76,8 @@ export function Process() {
                 <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-background border border-gold flex items-center justify-center font-display text-gold gold-glow">
                   {s.n}
                 </div>
-                <h3 className="font-display text-xl text-foreground mb-2">
-                  {s.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed max-w-lg">
-                  {s.desc}
-                </p>
+                <h3 className="font-display text-xl text-foreground mb-2">{s.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed max-w-lg">{s.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -113,12 +102,8 @@ export function Process() {
                 <div className="w-10 h-10 rounded-full bg-background border border-gold flex items-center justify-center font-display text-gold gold-glow mb-4">
                   {s.n}
                 </div>
-                <h3 className="font-display text-lg text-foreground mb-2">
-                  {s.title}
-                </h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {s.desc}
-                </p>
+                <h3 className="font-display text-lg text-foreground mb-2">{s.title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
               </motion.div>
             ))}
           </div>

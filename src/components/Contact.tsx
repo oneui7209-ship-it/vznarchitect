@@ -8,14 +8,11 @@ export function Contact() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-5">
             <div className="h-px w-10 bg-gold" />
-            <span className="text-[11px] uppercase tracking-[0.35em] text-gold">
-              Get in Touch
-            </span>
+            <span className="text-[11px] uppercase tracking-[0.35em] text-gold">Get in Touch</span>
             <div className="h-px w-10 bg-gold" />
           </div>
           <h2 className="font-display font-light text-4xl sm:text-5xl lg:text-6xl">
-            Let's design something{" "}
-            <span className="italic text-gold-gradient">exceptional</span>
+            Let's design something <span className="italic text-gold-gradient">exceptional</span>
           </h2>
         </div>
 
@@ -30,8 +27,18 @@ export function Contact() {
           >
             <div className="space-y-6">
               <InfoRow icon={Phone} label="Phone" value="+91 89500 78109" href="tel:8950078109" />
-              <InfoRow icon={Mail} label="Email" value="veersingh11919@gmail.com" href="mailto:veersingh11919@gmail.com" />
-              <InfoRow icon={Instagram} label="Instagram" value="@vznarchitect" href="https://instagram.com/vznarchitect" />
+              <InfoRow
+                icon={Mail}
+                label="Email"
+                value="veersingh11919@gmail.com"
+                href="mailto:veersingh11919@gmail.com"
+              />
+              <InfoRow
+                icon={Instagram}
+                label="Instagram"
+                value="@vznarchitect"
+                href="https://instagram.com/vznarchitect"
+              />
               <InfoRow
                 icon={MapPin}
                 label="Studio Address"
@@ -106,12 +113,8 @@ function InfoRow({
         <Icon size={18} strokeWidth={1.4} />
       </div>
       <div className="min-w-0">
-        <div className="text-[10px] uppercase tracking-[0.25em] text-gold mb-1">
-          {label}
-        </div>
-        <div className="text-sm text-foreground leading-relaxed break-words">
-          {value}
-        </div>
+        <div className="text-[10px] uppercase tracking-[0.25em] text-gold mb-1">{label}</div>
+        <div className="text-sm text-foreground leading-relaxed break-words">{value}</div>
       </div>
     </Wrap>
   );

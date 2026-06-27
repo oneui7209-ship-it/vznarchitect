@@ -35,8 +35,7 @@ export function Stats() {
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
-          background:
-            "radial-gradient(ellipse at center, rgba(212,175,55,0.4), transparent 60%)",
+          background: "radial-gradient(ellipse at center, rgba(212,175,55,0.4), transparent 60%)",
         }}
       />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
