@@ -4,6 +4,9 @@ import heroBanner from "@/assets/vzn-hero-banner.png";
 export function Hero() {
   return (
     <section id="home" className="relative w-full bg-background pt-[115px] md:pt-[120px]">
+      <h1 className="sr-only">
+        VZN Architect — Luxury Architecture &amp; Interior Design Studio in Jhajjar, Haryana
+      </h1>
       <div className="w-full h-auto overflow-hidden">
         <motion.div
           initial={{ scale: 1.02 }}

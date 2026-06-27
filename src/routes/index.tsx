@@ -44,7 +44,7 @@ export const Route = createFileRoute("/")({
           founder: "Parveen (Veer)",
           telephone: "+91-8950078109",
           email: "veersingh11919@gmail.com",
-          image: "/__l5e/vzn-logo.png",
+          image: "https://vznarchitect.onrender.com/vzn-logo-black-bg.png",
           address: {
             "@type": "PostalAddress",
             streetAddress:
