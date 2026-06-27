@@ -92,11 +92,11 @@ export function Navbar() {
         }`}
         style={!scrolled ? { top: `${stripeHeight}px` } : undefined}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-3 sm:px-8">
           <Link
             to="/"
             onClick={() => setOpen(false)}
-            className="flex items-center gap-2.5 sm:gap-3 group"
+            className="flex items-center gap-2 group"
           >
             <img
               src={logo}
@@ -107,7 +107,7 @@ export function Navbar() {
               <div className="font-display text-[16px] tracking-[0.2em] text-gold sm:text-[18px]">
                 VZN
               </div>
-              <div className="text-[10px] uppercase tracking-[0.3em] text-white/90 sm:text-[11px]">
+              <div className="hidden min-[400px]:inline text-[10px] uppercase tracking-[0.3em] text-white/90 sm:text-[11px]">
                 Architect
               </div>
             </div>
@@ -137,18 +137,19 @@ export function Navbar() {
           </button>
 
           {/* Right actions container on mobile to fill blank space and balance UI */}
-          <div className="flex lg:hidden items-center gap-2">
-            <a
-              href="tel:8950078109"
-              className="w-8 h-8 rounded-full border border-gold/40 text-gold flex items-center justify-center hover:bg-gold hover:text-gold-foreground hover:gold-glow transition-all duration-300 mr-1"
-              aria-label="Call Studio"
+          <div className="flex lg:hidden items-center gap-1.5">
+            <button
+              onClick={() => {
+                window.dispatchEvent(new CustomEvent("open-consultation-popup"));
+              }}
+              className="border border-gold/60 px-2 py-1 text-[9px] min-[375px]:text-[10px] uppercase tracking-[0.12em] text-gold hover:bg-gold hover:text-gold-foreground transition-all duration-300 hover:gold-glow cursor-pointer whitespace-nowrap"
             >
-              <Phone size={13} strokeWidth={1.5} />
-            </a>
+              Consultation
+            </button>
             
             <button
               onClick={() => setOpen(!open)}
-              className="text-gold p-2 cursor-pointer"
+              className="text-gold p-1.5 cursor-pointer"
               aria-label="Menu"
             >
               {open ? <X size={22} /> : <Menu size={22} />}

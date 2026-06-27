@@ -65,12 +65,15 @@ function Index() {
     const hash = window.location.hash;
     if (hash) {
       const id = hash.substring(1);
+      const loaderActive = typeof window !== "undefined" && !sessionStorage.getItem("vzn_initial_loader_shown");
+      const delay = loaderActive ? 2100 : 100;
+
       const timer = setTimeout(() => {
         const element = document.getElementById(id);
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
         }
-      }, 2100); // Wait for Loader animation (1.8s + 0.3s buffer) to complete
+      }, delay);
       return () => clearTimeout(timer);
     }
   }, []);

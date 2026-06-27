@@ -2,11 +2,30 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import logo from "@/assets/vzn-logo.png";
 
+let isInitialHydration = true;
+
 export function Loader() {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(() => {
+    if (!isInitialHydration) {
+      if (typeof window !== "undefined") {
+        return !sessionStorage.getItem("vzn_initial_loader_shown");
+      }
+      return false;
+    }
+    return true;
+  });
+
   useEffect(() => {
-    const t = setTimeout(() => setShow(false), 1800);
-    return () => clearTimeout(t);
+    isInitialHydration = false;
+    if (sessionStorage.getItem("vzn_initial_loader_shown")) {
+      setShow(false);
+    } else {
+      const t = setTimeout(() => {
+        setShow(false);
+        sessionStorage.setItem("vzn_initial_loader_shown", "true");
+      }, 1800);
+      return () => clearTimeout(t);
+    }
   }, []);
 
   return (
