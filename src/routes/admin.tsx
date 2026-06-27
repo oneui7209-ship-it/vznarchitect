@@ -9,6 +9,7 @@ export const Route = createFileRoute("/admin")({
         name: "description",
         content: "Admin dashboard for VZN Architect consultation submissions.",
       },
+      { name: "robots", content: "noindex, nofollow" },
     ],
   }),
   component: AdminPage,
