@@ -122,8 +122,19 @@ export function Footer() {
         {/* Designed Copyright & Developer Section */}
         <div className="mt-12 lg:mt-16 pt-6 lg:pt-8 border-t border-gold/15 flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-[11px] sm:text-xs text-muted-foreground text-center md:text-left">
           <div className="leading-relaxed">
-            © 2026 <span className="text-gold font-display font-medium">VZN Architect</span>.{" "}
-            <br className="md:hidden" /> All Rights Reserved.
+            <div>
+              © 2026 <span className="text-gold font-display font-medium">VZN Architect</span>.{" "}
+              <br className="md:hidden" /> All Rights Reserved.
+            </div>
+            <div className="mt-2 flex items-center justify-center md:justify-start gap-4">
+              <Link to="/privacy-policy" className="hover:text-gold transition-colors">
+                Privacy Policy
+              </Link>
+              <span className="text-gold/20">|</span>
+              <Link to="/terms-and-conditions" className="hover:text-gold transition-colors">
+                Terms & Conditions
+              </Link>
+            </div>
           </div>
           <div className="md:text-right leading-relaxed">
             Designed & Developed by{" "}
