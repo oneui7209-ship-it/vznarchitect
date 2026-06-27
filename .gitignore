@@ -34,3 +34,5 @@ dist-ssr
 # Lovable editor metadata
 .lovable/
 
+# Local Git Portable
+.git-portable/
