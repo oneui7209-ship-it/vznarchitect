@@ -4,7 +4,7 @@ import { Link } from "@tanstack/react-router";
 
 export function Footer() {
   return (
-    <footer className="relative bg-background border-t border-gold/15 overflow-hidden pb-28 sm:pb-32 lg:pb-0">
+    <footer aria-label="Site footer" className="relative bg-background border-t border-gold/15 overflow-hidden pb-28 sm:pb-32 lg:pb-0">
       <div className="absolute inset-x-0 top-0 hairline" />
       <div className="mx-auto max-w-7xl px-5 sm:px-8 py-16 lg:py-20">
         <div className="grid gap-10 grid-cols-2 lg:grid-cols-12">

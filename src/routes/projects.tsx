@@ -6,16 +6,47 @@ import { Projects } from "@/components/Projects";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { CursorGlow } from "@/components/CursorGlow";
+import { Breadcrumb } from "@/components/Breadcrumb";
+import {
+  generatePageMeta,
+  generateCanonicalLink,
+  generateBreadcrumbSchema,
+  jsonLdScript,
+  SITE_URL,
+  SITE_NAME,
+} from "@/lib/seo-config";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
-    meta: [
-      { title: "Selected Works — VZN Architect | Premium Design Portfolio" },
-      {
-        name: "description",
-        content:
-          "Browse VZN Architect's selected luxury works. Modern residential spaces, state-of-the-art office designs, commercial projects, and vastu-compliant layout planning.",
-      },
+    meta: generatePageMeta({
+      title:
+        "Our Projects & Portfolio | House Design & 3D Elevation in Jhajjar — VZN Architect",
+      description:
+        "Browse VZN Architect's luxury design portfolio: modern residential villas, commercial spaces, premium interiors, 3D elevation renders and vastu-compliant layouts in Jhajjar, Haryana and Delhi NCR.",
+      path: "/projects",
+    }),
+    links: generateCanonicalLink("/projects"),
+    scripts: [
+      jsonLdScript(
+        generateBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Projects", path: "/projects" },
+        ]),
+      ),
+      // CollectionPage schema for portfolio
+      jsonLdScript({
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "VZN Architect — Project Portfolio",
+        description:
+          "Selected luxury residential, commercial, interior and 3D visualization projects by VZN Architect in Jhajjar, Haryana.",
+        url: `${SITE_URL}/projects`,
+        isPartOf: {
+          "@type": "WebSite",
+          name: SITE_NAME,
+          url: SITE_URL,
+        },
+      }),
     ],
   }),
   component: ProjectsPage,
@@ -27,6 +58,14 @@ function ProjectsPage() {
       <CursorGlow />
       <Navbar />
       <main className="pt-[120px] bg-background text-foreground min-h-screen">
+        {/* Breadcrumb Navigation */}
+        <Breadcrumb
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Projects", href: "/projects" },
+          ]}
+        />
+
         {/* Banner Section */}
         <section className="relative py-20 md:py-28 overflow-hidden border-b border-gold/15 bg-surface">
           <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -52,11 +91,12 @@ function ProjectsPage() {
                 <div className="h-px w-10 bg-gold" />
               </div>
               <h1 className="font-display font-light text-4xl sm:text-5xl lg:text-7xl leading-tight">
-                Selected <span className="italic text-gold-gradient">Works</span>
+                Design Portfolio &{" "}
+                <span className="italic text-gold-gradient">Selected Works</span>
               </h1>
               <p className="mt-6 text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
                 A gallery of luxury villas, turnkey residences, corporate showrooms, and premium
-                photorealistic visualizations conceptualized in our studio.
+                photorealistic visualizations conceptualized in our Jhajjar studio.
               </p>
             </motion.div>
           </div>

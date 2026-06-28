@@ -5,17 +5,52 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { CursorGlow } from "@/components/CursorGlow";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import aboutImg from "@/assets/parveen-profile.png";
+import {
+  generatePageMeta,
+  generateCanonicalLink,
+  generateBreadcrumbSchema,
+  generateFAQSchema,
+  jsonLdScript,
+} from "@/lib/seo-config";
+
+const faqs = [
+  {
+    q: "Who is the principal designer behind VZN Architect?",
+    a: "VZN Architect was founded and is led by Parveen (Veer), a principal architect with extensive experience in luxury residential, commercial, interior design, and vastu compliance in Haryana and Delhi NCR.",
+  },
+  {
+    q: "Where is the studio located?",
+    a: "Our studio is located in Mahaveer Market, Near Cooperative Bank, Opposite Mini Sachivalaya, Dadri Toye, Jhajjar, Haryana. We serve clients across Jhajjar, Rohtak, Gurugram, and the wider Delhi NCR area.",
+  },
+  {
+    q: "What is your architectural philosophy?",
+    a: "We believe in combining classical proportions with contemporary functionality. Vastu shastra compatibility is seamlessly woven into modern structures to ensure harmonious energy flow.",
+  },
+  {
+    q: "Can I get a consultation online?",
+    a: "Yes, while we love welcoming clients to our studio, we offer virtual video design consultations to review site files, sketches, and requirements.",
+  },
+];
 
 export const Route = createFileRoute("/about")({
   head: () => ({
-    meta: [
-      { title: "About Us — VZN Architect | Premium Studio in Jhajjar" },
-      {
-        name: "description",
-        content:
-          "Discover VZN Architect, Jhajjar's leading luxury architecture & interior design studio. Founded by Parveen (Veer), we create spaces that inspire.",
-      },
+    meta: generatePageMeta({
+      title: "About VZN Architect | Best Architecture Firm in Jhajjar, Haryana",
+      description:
+        "Discover VZN Architect, Jhajjar's leading luxury architecture & interior design studio. Founded by Parveen (Veer), we specialize in residential design, commercial architecture, vastu planning, 3D elevation and building approvals across Haryana.",
+      path: "/about",
+    }),
+    links: generateCanonicalLink("/about"),
+    scripts: [
+      jsonLdScript(
+        generateBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ]),
+      ),
+      jsonLdScript(generateFAQSchema(faqs)),
     ],
   }),
   component: AboutPage,
@@ -44,31 +79,20 @@ const philosophies = [
   },
 ];
 
-const faqs = [
-  {
-    q: "Who is the principal designer behind VZN Architect?",
-    a: "VZN Architect was founded and is led by Parveen (Veer), a principal architect with extensive experience in luxury residential, commercial, interior design, and vastu compliance in Haryana and Delhi NCR.",
-  },
-  {
-    q: "Where is the studio located?",
-    a: "Our studio is located in Mahaveer Market, Near Cooperative Bank, Opposite Mini Sachivalaya, Dadri Toye, Jhajjar, Haryana. We serve clients across Jhajjar, Rohtak, Gurugram, and the wider Delhi NCR area.",
-  },
-  {
-    q: "What is your architectural philosophy?",
-    a: "We believe in combining classical proportions with contemporary functionality. Vastu shastra compatibility is seamlessly woven into modern structures to ensure harmonious energy flow.",
-  },
-  {
-    q: "Can I get a consultation online?",
-    a: "Yes, while we love welcoming clients to our studio, we offer virtual video design consultations to review site files, sketches, and requirements.",
-  },
-];
-
 function AboutPage() {
   return (
     <>
       <CursorGlow />
       <Navbar />
       <main className="pt-[120px] bg-background text-foreground min-h-screen">
+        {/* Breadcrumb Navigation */}
+        <Breadcrumb
+          items={[
+            { label: "Home", href: "/" },
+            { label: "About", href: "/about" },
+          ]}
+        />
+
         {/* Banner Section */}
         <section className="relative py-20 md:py-28 overflow-hidden border-b border-gold/15 bg-surface">
           <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -94,7 +118,8 @@ function AboutPage() {
                 <div className="h-px w-10 bg-gold" />
               </div>
               <h1 className="font-display font-light text-4xl sm:text-5xl lg:text-7xl leading-tight">
-                About the <span className="italic text-gold-gradient">Studio</span>
+                About <span className="italic text-gold-gradient">VZN Architect</span> — Jhajjar's
+                Premier Design Studio
               </h1>
               <p className="mt-6 text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
                 Transforming spaces with precision, passion, and elite architectural execution.
@@ -113,7 +138,7 @@ function AboutPage() {
                 <div className="aspect-[4/5] overflow-hidden border border-gold/20 shadow-2xl relative group">
                   <img
                     src={aboutImg}
-                    alt="VZN Architect Office"
+                    alt="Parveen (Veer), Founder & Principal Architect of VZN Architect, Jhajjar — leading residential and commercial architecture studio in Haryana"
                     className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />

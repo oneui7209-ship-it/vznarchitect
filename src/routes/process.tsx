@@ -5,20 +5,14 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { CursorGlow } from "@/components/CursorGlow";
-
-export const Route = createFileRoute("/process")({
-  head: () => ({
-    meta: [
-      { title: "Our Process — VZN Architect | Step-by-Step Design Workflow" },
-      {
-        name: "description",
-        content:
-          "Learn about VZN Architect's structured design-to-build workflow: consultation, planning, layout design, 3D renders, building approvals, and execution.",
-      },
-    ],
-  }),
-  component: ProcessPage,
-});
+import { Breadcrumb } from "@/components/Breadcrumb";
+import {
+  generatePageMeta,
+  generateCanonicalLink,
+  generateBreadcrumbSchema,
+  generateHowToSchema,
+  jsonLdScript,
+} from "@/lib/seo-config";
 
 const steps = [
   {
@@ -107,12 +101,54 @@ const steps = [
   },
 ];
 
+export const Route = createFileRoute("/process")({
+  head: () => ({
+    meta: generatePageMeta({
+      title:
+        "Our Design Process | Step-by-Step Architecture Workflow — VZN Architect Jhajjar",
+      description:
+        "Learn VZN Architect's structured 6-step design-to-build workflow: consultation, vastu planning, schematic design, 3D rendering, building approvals, and turnkey construction execution in Jhajjar, Haryana.",
+      path: "/process",
+    }),
+    links: generateCanonicalLink("/process"),
+    scripts: [
+      jsonLdScript(
+        generateBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Process", path: "/process" },
+        ]),
+      ),
+      // HowTo schema for the 6-step process
+      jsonLdScript(
+        generateHowToSchema({
+          name: "VZN Architect Design-to-Build Process",
+          description:
+            "A structured 6-step workflow from initial consultation to turnkey construction handover for residential and commercial architecture projects in Jhajjar, Haryana.",
+          steps: steps.map((s) => ({
+            name: s.title,
+            text: s.details,
+          })),
+        }),
+      ),
+    ],
+  }),
+  component: ProcessPage,
+});
+
 function ProcessPage() {
   return (
     <>
       <CursorGlow />
       <Navbar />
       <main className="pt-[120px] bg-background text-foreground min-h-screen">
+        {/* Breadcrumb Navigation */}
+        <Breadcrumb
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Process", href: "/process" },
+          ]}
+        />
+
         {/* Banner Section */}
         <section className="relative py-20 md:py-28 overflow-hidden border-b border-gold/15 bg-surface">
           <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -138,7 +174,9 @@ function ProcessPage() {
                 <div className="h-px w-10 bg-gold" />
               </div>
               <h1 className="font-display font-light text-4xl sm:text-5xl lg:text-7xl leading-tight">
-                Our <span className="italic text-gold-gradient">Process</span>
+                Our Design{" "}
+                <span className="italic text-gold-gradient">Process</span> — From Concept
+                to Construction
               </h1>
               <p className="mt-6 text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
                 A structured, transparent workflow designed to guide you from initial design concept

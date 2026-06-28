@@ -4,17 +4,30 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { CursorGlow } from "@/components/CursorGlow";
+import {
+  generatePageMeta,
+  generateCanonicalLink,
+  generateBreadcrumbSchema,
+  jsonLdScript,
+} from "@/lib/seo-config";
 
 export const Route = createFileRoute("/terms-and-conditions")({
   head: () => ({
-    meta: [
-      { title: "Terms and Conditions — VZN Architect | Luxury Studio in Jhajjar" },
-      {
-        name: "description",
-        content:
-          "Understand the terms of service, intellectual property guidelines, and services agreement when working with VZN Architect.",
-      },
-      { name: "robots", content: "noindex, follow" },
+    meta: generatePageMeta({
+      title: "Terms and Conditions — VZN Architect | Luxury Studio in Jhajjar",
+      description:
+        "Understand the terms of service, intellectual property guidelines, and services agreement when working with VZN Architect.",
+      path: "/terms-and-conditions",
+      noindex: true,
+    }),
+    links: generateCanonicalLink("/terms-and-conditions"),
+    scripts: [
+      jsonLdScript(
+        generateBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Terms & Conditions", path: "/terms-and-conditions" },
+        ]),
+      ),
     ],
   }),
   component: TermsPage,

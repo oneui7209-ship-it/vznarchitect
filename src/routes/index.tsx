@@ -13,53 +13,155 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Loader } from "@/components/Loader";
 import { CursorGlow } from "@/components/CursorGlow";
+import {
+  generatePageMeta,
+  generateCanonicalLink,
+  generateLocalBusinessSchema,
+  generateBreadcrumbSchema,
+  jsonLdScript,
+  SITE_URL,
+  BUSINESS,
+} from "@/lib/seo-config";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "VZN Architect — Luxury Architecture & Interior Design Studio in Jhajjar" },
-      {
-        name: "description",
-        content:
-          "VZN Architect is a premium architecture, interior and 3D visualization studio in Jhajjar, Haryana. Residential, commercial, building approvals, vastu and construction services.",
-      },
-      { property: "og:title", content: "VZN Architect — Your Vision. Our Architecture." },
-      {
-        property: "og:description",
-        content:
-          "Premium architectural, interior and visualization services for residential and commercial projects.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
+export const Route = createFileRoute("/")(
+  {
+    head: () => ({
+      meta: generatePageMeta({
+        title:
+          "Best Architect in Jhajjar | VZN Architect — Luxury Architecture & Interior Design Studio",
+        description:
+          "VZN Architect is the leading architecture firm in Jhajjar, Haryana. We offer residential & commercial architectural design, interior design, 3D elevation, vastu planning, building approvals and construction services.",
+        path: "/",
+      }),
+      links: generateCanonicalLink("/"),
+      scripts: [
+        // LocalBusiness schema — primary local SEO signal
+        jsonLdScript(generateLocalBusinessSchema()),
+        // BreadcrumbList for homepage
+        jsonLdScript(
+          generateBreadcrumbSchema([{ name: "Home", path: "/" }]),
+        ),
+        // Enhanced ArchitecturalService schema
+        jsonLdScript({
           "@context": "https://schema.org",
-          "@type": "ArchitecturalService",
+          "@type": "ProfessionalService",
+          "@id": `${SITE_URL}/#service`,
           name: "VZN Architect",
-          founder: "Parveen (Veer)",
-          telephone: "+91-8950078109",
-          email: "veersingh11919@gmail.com",
-          image: "https://vznarchitect.onrender.com/vzn-logo-black-bg.png",
+          alternateName: "VZN Architecture Studio",
+          description:
+            "Premium architecture, interior design and 3D visualization studio offering residential design, commercial design, building approvals, vastu consultation and turnkey construction in Jhajjar, Haryana.",
+          founder: {
+            "@type": "Person",
+            name: BUSINESS.founder,
+            jobTitle: "Principal Architect",
+          },
+          telephone: BUSINESS.telephone,
+          email: BUSINESS.email,
+          image: `${SITE_URL}/vzn-logo-black-bg.png`,
+          url: SITE_URL,
           address: {
             "@type": "PostalAddress",
-            streetAddress:
-              "Mahaveer Market, Near Cooperative Bank, Opp. Mini Sachivalaya, Dadri Toye",
-            addressLocality: "Jhajjar",
-            addressRegion: "HR",
-            addressCountry: "IN",
+            streetAddress: BUSINESS.address.street,
+            addressLocality: BUSINESS.address.locality,
+            addressRegion: BUSINESS.address.regionCode,
+            postalCode: BUSINESS.address.postalCode,
+            addressCountry: BUSINESS.address.country,
           },
-          sameAs: ["https://instagram.com/vznarchitect"],
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: BUSINESS.geo.latitude,
+            longitude: BUSINESS.geo.longitude,
+          },
+          priceRange: BUSINESS.priceRange,
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+              ],
+              opens: "09:00",
+              closes: "19:00",
+            },
+          ],
+          sameAs: BUSINESS.socialProfiles,
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "Architecture & Design Services",
+            itemListElement: [
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Architectural Design",
+                  description:
+                    "Bespoke residential and commercial architecture tailored to your land and lifestyle in Jhajjar and Haryana.",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Interior Design",
+                  description:
+                    "Curated luxury interiors with premium finishes, lighting and bespoke joinery.",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "3D Visualization & Elevation Design",
+                  description:
+                    "Photoreal renders and walkthroughs to experience your space before it is built.",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Building Approval & Sanctions",
+                  description:
+                    "HSIDC, DTP, HSVP, CLU and ULR sanctions handled end-to-end.",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Vastu Consultation",
+                  description:
+                    "Traditional vastu principles integrated into modern architectural design.",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Construction Services",
+                  description:
+                    "Turnkey residential and commercial construction with quality control.",
+                },
+              },
+            ],
+          },
+          areaServed: [
+            { "@type": "City", name: "Jhajjar" },
+            { "@type": "City", name: "Rohtak" },
+            { "@type": "City", name: "Gurugram" },
+            { "@type": "State", name: "Haryana" },
+            { "@type": "Place", name: "Delhi NCR" },
+          ],
         }),
-      },
-    ],
-  }),
-  component: Index,
-});
+      ],
+    }),
+    component: Index,
+  },
+);
 
 function Index() {
   useEffect(() => {

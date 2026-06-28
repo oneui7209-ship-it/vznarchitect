@@ -4,17 +4,30 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { CursorGlow } from "@/components/CursorGlow";
+import {
+  generatePageMeta,
+  generateCanonicalLink,
+  generateBreadcrumbSchema,
+  jsonLdScript,
+} from "@/lib/seo-config";
 
 export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
-    meta: [
-      { title: "Privacy Policy — VZN Architect | Luxury Studio in Jhajjar" },
-      {
-        name: "description",
-        content:
-          "Learn how VZN Architect collects, uses, and protects your information when you contact us or request a consultation.",
-      },
-      { name: "robots", content: "noindex, follow" },
+    meta: generatePageMeta({
+      title: "Privacy Policy — VZN Architect | Luxury Studio in Jhajjar",
+      description:
+        "Learn how VZN Architect collects, uses, and protects your information when you contact us or request a consultation.",
+      path: "/privacy-policy",
+      noindex: true,
+    }),
+    links: generateCanonicalLink("/privacy-policy"),
+    scripts: [
+      jsonLdScript(
+        generateBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Privacy Policy", path: "/privacy-policy" },
+        ]),
+      ),
     ],
   }),
   component: PrivacyPolicyPage,

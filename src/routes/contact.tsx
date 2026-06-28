@@ -5,16 +5,34 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { CursorGlow } from "@/components/CursorGlow";
+import { Breadcrumb } from "@/components/Breadcrumb";
+import {
+  generatePageMeta,
+  generateCanonicalLink,
+  generateBreadcrumbSchema,
+  generateLocalBusinessSchema,
+  jsonLdScript,
+} from "@/lib/seo-config";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
-    meta: [
-      { title: "Contact Us — VZN Architect | Luxury Studio in Jhajjar" },
-      {
-        name: "description",
-        content:
-          "Contact VZN Architect in Jhajjar. Book a consultation, request price quotes, get maps directions, or submit an online residential inquiry.",
-      },
+    meta: generatePageMeta({
+      title:
+        "Contact VZN Architect | Book a Consultation in Jhajjar, Haryana",
+      description:
+        "Contact VZN Architect in Jhajjar, Haryana. Call +91 89500 78109 to book an architectural consultation, request a price quote, get studio directions, or submit an online inquiry for house design and interior services.",
+      path: "/contact",
+    }),
+    links: generateCanonicalLink("/contact"),
+    scripts: [
+      jsonLdScript(
+        generateBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact" },
+        ]),
+      ),
+      // LocalBusiness schema (contact-specific with ContactPoint)
+      jsonLdScript(generateLocalBusinessSchema()),
     ],
   }),
   component: ContactPage,
@@ -26,6 +44,14 @@ function ContactPage() {
       <CursorGlow />
       <Navbar />
       <main className="pt-[120px] bg-background text-foreground min-h-screen">
+        {/* Breadcrumb Navigation */}
+        <Breadcrumb
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Contact", href: "/contact" },
+          ]}
+        />
+
         {/* Banner Section */}
         <section className="relative py-20 md:py-28 overflow-hidden border-b border-gold/15 bg-surface">
           <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -51,7 +77,7 @@ function ContactPage() {
                 <div className="h-px w-10 bg-gold" />
               </div>
               <h1 className="font-display font-light text-4xl sm:text-5xl lg:text-7xl leading-tight">
-                Connect with the <span className="italic text-gold-gradient">Studio</span>
+                Contact <span className="italic text-gold-gradient">VZN Architect</span> in Jhajjar
               </h1>
               <p className="mt-6 text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
                 Stop by our Jhajjar studio to review physical portfolios, materials, and layouts.
@@ -76,7 +102,7 @@ function ContactPage() {
                     vastu checks, and commercial permits. Use the links below to reach us directly.
                   </p>
 
-                  <div className="space-y-4 pt-2">
+                  <address className="not-italic space-y-4 pt-2">
                     <InfoRow
                       icon={Phone}
                       label="Call Studio"
@@ -101,7 +127,7 @@ function ContactPage() {
                       value="Mahaveer Market, Near Cooperative Bank, Opp. Mini Sachivalaya, Dadri Toye, Jhajjar (HR.)"
                       href="https://www.google.com/maps/place/VZN+Architect/@28.5078024,76.7472682,17z/data=!3m1!4b1!4m6!3m5!1s0x390d6d326f31573f:0x8cabe8ea949021f6!8m2!3d28.5078024!4d76.7472682!16s%2Fg%2F11nqf481vd?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
                     />
-                  </div>
+                  </address>
                 </div>
 
                 <div className="flex flex-wrap gap-4 pt-2">
@@ -132,7 +158,7 @@ function ContactPage() {
                   {/* Map Container */}
                   <div className="w-full h-full border border-gold/15 overflow-hidden shadow-2xl relative group bg-surface">
                     <iframe
-                      title="VZN Architect location map"
+                      title="VZN Architect studio location on Google Maps — Mahaveer Market, Jhajjar, Haryana"
                       src="https://www.google.com/maps?q=28.5078024,76.7472682&t=&z=17&ie=UTF8&iwloc=&output=embed"
                       className="w-full h-full border-0"
                       loading="lazy"

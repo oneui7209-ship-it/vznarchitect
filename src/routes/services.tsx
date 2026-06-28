@@ -16,20 +16,15 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { CursorGlow } from "@/components/CursorGlow";
-
-export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Our Services — VZN Architect | Premium Architecture & Interiors" },
-      {
-        name: "description",
-        content:
-          "VZN Architect offers luxury architectural design, home interiors, photoreal 3D rendering, vastu planning, and building approvals in Jhajjar and Haryana.",
-      },
-    ],
-  }),
-  component: ServicesPage,
-});
+import { Breadcrumb } from "@/components/Breadcrumb";
+import {
+  generatePageMeta,
+  generateCanonicalLink,
+  generateBreadcrumbSchema,
+  generateFAQSchema,
+  generateServiceSchema,
+  jsonLdScript,
+} from "@/lib/seo-config";
 
 const servicesDetail = [
   {
@@ -161,12 +156,52 @@ const faqs = [
   },
 ];
 
+export const Route = createFileRoute("/services")({
+  head: () => ({
+    meta: generatePageMeta({
+      title:
+        "Architecture & Interior Design Services in Jhajjar | House Design, 3D Elevation & Vastu — VZN Architect",
+      description:
+        "VZN Architect offers 8 premium services: architectural design, interior design, 3D visualization, building approvals (HSVP, HSIDC, DTP), vastu consultation, layout planning, and turnkey construction in Jhajjar, Haryana.",
+      path: "/services",
+    }),
+    links: generateCanonicalLink("/services"),
+    scripts: [
+      jsonLdScript(
+        generateBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+        ]),
+      ),
+      jsonLdScript(generateFAQSchema(faqs)),
+      // Individual Service schemas
+      ...servicesDetail.map((s) =>
+        jsonLdScript(
+          generateServiceSchema({
+            name: s.title,
+            description: s.details,
+          }),
+        ),
+      ),
+    ],
+  }),
+  component: ServicesPage,
+});
+
 function ServicesPage() {
   return (
     <>
       <CursorGlow />
       <Navbar />
       <main className="pt-[120px] bg-background text-foreground min-h-screen">
+        {/* Breadcrumb Navigation */}
+        <Breadcrumb
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Services", href: "/services" },
+          ]}
+        />
+
         {/* Banner Section */}
         <section className="relative py-20 md:py-28 overflow-hidden border-b border-gold/15 bg-surface">
           <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -192,7 +227,8 @@ function ServicesPage() {
                 <div className="h-px w-10 bg-gold" />
               </div>
               <h1 className="font-display font-light text-4xl sm:text-5xl lg:text-7xl leading-tight">
-                Our <span className="italic text-gold-gradient">Expertise</span>
+                Architecture & Design{" "}
+                <span className="italic text-gold-gradient">Services</span> in Jhajjar
               </h1>
               <p className="mt-6 text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
                 From residential blueprints and luxury interiors to regulatory sanctions, we

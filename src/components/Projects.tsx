@@ -10,12 +10,12 @@ import p5 from "@/assets/project-5.jpg";
 import p6 from "@/assets/project-6.jpg";
 
 export const items = [
-  { img: p1, title: "Veera Residence", cat: "Residential", loc: "Jhajjar, HR", h: "tall" },
-  { img: p2, title: "Onyx Living Room", cat: "Interior", loc: "Gurugram", h: "short" },
-  { img: p3, title: "Meridian Tower", cat: "Commercial", loc: "Delhi NCR", h: "tall" },
-  { img: p4, title: "Lagoon Villa", cat: "3D Renders", loc: "Concept", h: "short" },
-  { img: p5, title: "Noir Suite", cat: "Interior", loc: "Jhajjar", h: "tall" },
-  { img: p6, title: "Atelier Plans", cat: "Residential", loc: "In Studio", h: "short" },
+  { img: p1, title: "Veera Residence", cat: "Residential", loc: "Jhajjar, HR", h: "tall", alt: "Veera Residence — luxury residential house design by VZN Architect in Jhajjar, Haryana" },
+  { img: p2, title: "Onyx Living Room", cat: "Interior", loc: "Gurugram", h: "short", alt: "Onyx Living Room — premium interior design project by VZN Architect in Gurugram" },
+  { img: p3, title: "Meridian Tower", cat: "Commercial", loc: "Delhi NCR", h: "tall", alt: "Meridian Tower — modern commercial building design by VZN Architect in Delhi NCR" },
+  { img: p4, title: "Lagoon Villa", cat: "3D Renders", loc: "Concept", h: "short", alt: "Lagoon Villa — photorealistic 3D elevation render and villa design by VZN Architect" },
+  { img: p5, title: "Noir Suite", cat: "Interior", loc: "Jhajjar", h: "tall", alt: "Noir Suite — luxury interior design suite by VZN Architect in Jhajjar" },
+  { img: p6, title: "Atelier Plans", cat: "Residential", loc: "In Studio", h: "short", alt: "Atelier Plans — residential house planning and architectural blueprints by VZN Architect" },
 ];
 
 export const cats = ["All", "Residential", "Commercial", "Interior", "3D Renders"];
@@ -140,7 +140,7 @@ export function Projects({ limit, showAllButton = false }: ProjectsProps) {
               >
                 <img
                   src={item.img}
-                  alt={item.title}
+                  alt={item.alt}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-[1.4s] ease-out group-hover:scale-105"
                 />
@@ -174,7 +174,7 @@ export function Projects({ limit, showAllButton = false }: ProjectsProps) {
                 >
                   <img
                     src={item.img}
-                    alt={item.title}
+                    alt={item.alt}
                     loading="lazy"
                     className="w-full h-full object-cover"
                   />
@@ -257,7 +257,7 @@ export function Projects({ limit, showAllButton = false }: ProjectsProps) {
             >
               <img
                 src={items[open].img}
-                alt={items[open].title}
+                alt={items[open].alt}
                 className="w-full max-h-[80vh] object-contain"
               />
               <div className="mt-5 text-center">
