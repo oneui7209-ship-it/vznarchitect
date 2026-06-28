@@ -92,6 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           content: "yuEWCOM2ChWlRgN4GinllTfdtN2Kv5CTGbJj3syVdCM",
         },
         { name: "theme-color", content: "#050505" },
+        { name: "application-name", content: "VZN Architect" },
         { title: "VZN Architect" },
         {
           name: "description",

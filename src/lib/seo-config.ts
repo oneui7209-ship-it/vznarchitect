@@ -73,6 +73,7 @@ export function generatePageMeta({
   const meta: Record<string, string>[] = [
     { title },
     { name: "description", content: description },
+    { name: "application-name", content: SITE_NAME },
     // Open Graph
     { property: "og:title", content: title },
     { property: "og:description", content: description },
@@ -123,7 +124,9 @@ export function generateWebsiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
     name: SITE_NAME,
+    alternateName: "VZN Architect — Luxury Architecture & Interior Design Studio",
     url: SITE_URL,
     description:
       "VZN Architect is a premium architecture, interior design and 3D visualization studio in Jhajjar, Haryana, India.",
