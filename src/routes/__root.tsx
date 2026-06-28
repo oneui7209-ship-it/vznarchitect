@@ -11,7 +11,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import logoUrl from "../assets/vzn-logo.png?url";
+
 import { reportAppError } from "../lib/error-logger";
 import { MobileDock } from "../components/MobileDock";
 import { ConsultationPopup } from "../components/ConsultationPopup";
@@ -119,7 +119,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { name: "ICBM", content: "28.5078024, 76.7472682" },
       ],
       links: [
-        { rel: "icon", href: logoUrl, type: "image/png" },
+        { rel: "icon", type: "image/png", sizes: "48x48", href: "/favicon-48x48.png" },
+        { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
+        { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
+        { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
         { rel: "stylesheet", href: appCss },
         // DNS prefetch for faster font loading
         { rel: "dns-prefetch", href: "https://fonts.googleapis.com" },
